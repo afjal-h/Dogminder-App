@@ -1,37 +1,18 @@
+import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
+import StackNavigator from './StackNavigator';
+
 
 
 export default function App() {
-  const handlepress=() => console.log("Text has been pressed LFG");
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Image style={styles.tinyLogo}
-      
-       source={require("./assets/icon.png")}/>
-      <Text onPress={handlepress}>Username</Text>
-      <Text>Password</Text>
+    <NavigationContainer>
+      <StackNavigator />
 
-
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#beeede',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
 
-  tinyLogo:{
-    width: 200,
-    height: 200,
-    borderRadius:60
-
-
-  }
-  
-});
