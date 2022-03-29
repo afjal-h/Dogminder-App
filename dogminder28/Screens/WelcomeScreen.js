@@ -15,7 +15,7 @@ function SignUpScreen(props) {
             />
             <Button
                 title="Sign Up"
-                onPress={() => Alert.alert('Simple Button pressed')}
+                onPress={() => navigation.navigate("SignUpPage")}
             />
 
         </View>

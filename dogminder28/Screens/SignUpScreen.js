@@ -43,12 +43,14 @@ const styles = StyleSheet.create({
         backgroundColor: "#bdbdbd",
         paddingVertical: 10,
 
-        marginVertical: 10
+        marginVertical: 10,
+        backgroundColor: "#808080",
 
     },
 
     ButtonText: {
         textAlign: "center",
+        color: "#fff"
 
     },
 
@@ -59,7 +61,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         backgroundColor: "#bdbdbd",
         paddingHorizontal: 16,
-        marginVertical: 10
+        marginVertical: 10,
 
     },
     icon: {
