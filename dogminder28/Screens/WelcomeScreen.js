@@ -8,15 +8,12 @@ function SignUpScreen(props) {
     return (
         <View style={styles.container}>
             <Image style={styles.icon} source={require('../assets/icon.png')} />
-            <Button
-
-                title="Login"
-                onPress={() => navigation.navigate("SignUpPage")}
-            />
-            <Button
-                title="Sign Up"
-                onPress={() => navigation.navigate("SignUpPage")}
-            />
+            <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('LoginPage')}>
+                <Text style={styles.ButtonText}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('SignUpPage')}>
+                <Text style={styles.ButtonText}>Sign Up</Text>
+            </TouchableOpacity>
 
         </View>
     );
@@ -29,7 +26,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#beeede",
         alignItems: "center",
-        justifyContent: "flex-end",
+        justifyContent: "center",
 
     }
 
@@ -37,9 +34,27 @@ const styles = StyleSheet.create({
     icon: {
         height: 200,
         width: 200,
-        position: "absolute",
         borderRadius: 60,
-        top: 250
+
+    },
+
+    LoginButton: {
+
+        width: 100,
+        top: 30,
+        borderRadius: 25,
+        backgroundColor: "#bdbdbd",
+        paddingVertical: 10,
+
+        marginVertical: 10,
+        backgroundColor: "#808080",
+
+    },
+
+    ButtonText: {
+        textAlign: "center",
+        color: "#fff"
+
     },
 
 

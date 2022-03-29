@@ -16,7 +16,7 @@ function SignUpScreen(props) {
 
 
             <TouchableOpacity style={styles.LoginButton}>
-                <Text style={styles.ButtonText}>Sign Up</Text>
+                <Text style={styles.ButtonText}>Login</Text>
             </TouchableOpacity>
 
 
