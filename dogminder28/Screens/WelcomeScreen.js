@@ -14,6 +14,9 @@ function SignUpScreen(props) {
             <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('SignUpPage')}>
                 <Text style={styles.ButtonText}>Sign Up</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('SearchPage')}>
+                <Text style={styles.ButtonText}>Search Test</Text>
+            </TouchableOpacity>
 
         </View>
     );

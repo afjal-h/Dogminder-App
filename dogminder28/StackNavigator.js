@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import WelcomeScreen from './Screens/WelcomeScreen'
 import SignUpScreen from './Screens/SignUpScreen'
 import LoginScreen from './Screens/LoginScreen'
+import SearchScreen from './Screens/SearchScreen'
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
   return (
@@ -12,6 +13,7 @@ const StackNavigator = () => {
         <Stack.Screen name="WelcomePage" component={WelcomeScreen} />
         <Stack.Screen name="SignUpPage" component={SignUpScreen} />
         <Stack.Screen name="LoginPage" component={LoginScreen} />
+        <Stack.Screen name="SearchPage" component={SearchScreen} />
 
       </Stack.Group>
     </Stack.Navigator>
