@@ -11,13 +11,13 @@ function SignUpScreen(props) {
     const [password, setPassword] = useState('');
     const [RepeatPassword, setRepeatPassword] = useState('');
 
-    const handleSignUp =() => {
-        auth 
-        .createUserWithEmailAndPassword (email,password)
-        .then(userCredentials =>{
-            const user= userCredentials.user;
-        }) 
-        .catch(error =>alert(error.message))
+    const handleSignUp = () => {
+        auth
+            .createUserWithEmailAndPassword(email, password)
+            .then(userCredentials => {
+                const user = userCredentials.user;
+            })
+            .catch(error => alert(error.message))
 
     }
 
@@ -33,7 +33,6 @@ function SignUpScreen(props) {
 
 
             <TextInput style={styles.inputBox}
-                secureTextEntry={true}
                 value={email}
                 onChangeText={setEmail}
                 placeholder="Email"
@@ -49,8 +48,8 @@ function SignUpScreen(props) {
 
 
             <TextInput style={styles.inputBox}
-            value={RepeatPassword}
-            onChangeText={setRepeatPassword}
+                value={RepeatPassword}
+                onChangeText={setRepeatPassword}
                 secureTextEntry={true}
                 placeholder="Repeat Password"
                 placeholderTextColor={"#fff"} />
@@ -100,12 +99,12 @@ const styles = StyleSheet.create({
         color: "#fff"
 
     },
-    SigninButton:{
-        top:80,
-        color:"#000",
+    SigninButton: {
+        top: 80,
+        color: "#000",
 
     },
-    
+
 
     inputBox: {
         width: 300,

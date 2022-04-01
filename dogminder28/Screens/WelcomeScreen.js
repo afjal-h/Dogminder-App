@@ -12,26 +12,26 @@ function SignUpScreen(props) {
 
 
     return (
-        
-        <View style={styles.container}> 
-                        <Image style={styles.icon} source={require('../assets/icon.png')} />
-                <TextInput style={styles.inputBox}
+
+        <View style={styles.container}>
+            <Image style={styles.icon} source={require('../assets/icon.png')} />
+            <TextInput style={styles.inputBox}
                 value={Username}
-                onChangeText={text=> setUsername(text)}
+                onChangeText={text => setUsername(text)}
                 placeholder="Username"
                 placeholderTextColor={"#fff"} />
             <TextInput style={styles.inputBox}
                 value={Password}
-                onChangeText={text=> setPassword(text)}
+                onChangeText={text => setPassword(text)}
                 secureTextEntry={true}
                 placeholder="Password"
                 placeholderTextColor={"#fff"} />
 
-                
 
 
 
-            <TouchableOpacity style={styles.LoginButton} onPress={()=> navigation.navigate('HomePage')}>
+
+            <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.replace('HomePage')}>
                 <Text style={styles.ButtonText}>Sign In</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.SignUpButton} onPress={() => navigation.navigate('SignUpPage')}>
@@ -86,12 +86,12 @@ const styles = StyleSheet.create({
 
     },
 
-    SignUpButton:{
-        top:80,
-        color:"#000",
+    SignUpButton: {
+        top: 80,
+        color: "#000",
 
     },
-    
+
 
     inputBox: {
         width: 300,
