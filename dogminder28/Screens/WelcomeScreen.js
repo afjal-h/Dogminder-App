@@ -1,18 +1,28 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, TextInput, Alert, TouchableOpacity, Button, Image, StyleSheet } from "react-native";
+import { useState } from "react";
+
 
 
 
 function SignUpScreen(props) {
-    const navigation = useNavigation();
+    const navigation = useNavigation(); //this is a variable that needs to be initialised on every page so that buttons can be used to navigate to different pages
+    const [Username, setUsername] = useState('');
+    const [Password, setPassword] = useState('');
+
+
     return (
         
         <View style={styles.container}> 
                         <Image style={styles.icon} source={require('../assets/icon.png')} />
                 <TextInput style={styles.inputBox}
+                value={Username}
+                onChangeText={text=> setUsername(text)}
                 placeholder="Username"
                 placeholderTextColor={"#fff"} />
             <TextInput style={styles.inputBox}
+                value={Password}
+                onChangeText={text=> setPassword(text)}
                 secureTextEntry={true}
                 placeholder="Password"
                 placeholderTextColor={"#fff"} />
@@ -21,7 +31,7 @@ function SignUpScreen(props) {
 
 
 
-            <TouchableOpacity style={styles.LoginButton}>
+            <TouchableOpacity style={styles.LoginButton} onPress={()=> navigation.navigate('HomePage')}>
                 <Text style={styles.ButtonText}>Sign In</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.SignUpButton} onPress={() => navigation.navigate('SignUpPage')}>
