@@ -1,25 +1,38 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, Alert, TouchableOpacity, Button, Image, StyleSheet } from "react-native";
+import { View, Text, TextInput, Alert, TouchableOpacity, Button, Image, StyleSheet } from "react-native";
 
 
 
 function SignUpScreen(props) {
     const navigation = useNavigation();
     return (
-        <View style={styles.container}>
-            <Image style={styles.icon} source={require('../assets/icon.png')} />
-            <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('LoginPage')}>
-                <Text style={styles.ButtonText}>Login</Text>
+        
+        <View style={styles.container}> 
+                        <Image style={styles.icon} source={require('../assets/icon.png')} />
+                <TextInput style={styles.inputBox}
+                placeholder="Username"
+                placeholderTextColor={"#fff"} />
+            <TextInput style={styles.inputBox}
+                secureTextEntry={true}
+                placeholder="Password"
+                placeholderTextColor={"#fff"} />
+
+                
+
+
+
+            <TouchableOpacity style={styles.LoginButton}>
+                <Text style={styles.ButtonText}>Sign In</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('SignUpPage')}>
-                <Text style={styles.ButtonText}>Sign Up</Text>
+            <TouchableOpacity style={styles.SignUpButton} onPress={() => navigation.navigate('SignUpPage')}>
+                <Text style={styles.ButtonText}>Don't have an account? Create one</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('SearchPage')}>
+            {/* <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('SearchPage')}>
                 <Text style={styles.ButtonText}>Search Test</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('BookPage')}>
                 <Text style={styles.ButtonText}>Book Test</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
         </View>
     );
@@ -60,6 +73,24 @@ const styles = StyleSheet.create({
     ButtonText: {
         textAlign: "center",
         color: "#fff"
+
+    },
+
+    SignUpButton:{
+        top:80,
+        color:"#000",
+
+    },
+    
+
+    inputBox: {
+        width: 300,
+        height: 40,
+        top: 30,
+        borderRadius: 25,
+        backgroundColor: "#bdbdbd",
+        paddingHorizontal: 16,
+        marginVertical: 10,
 
     },
 
