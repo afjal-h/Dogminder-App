@@ -12,6 +12,7 @@ function SignUpScreen(props) {
     const [RepeatPassword, setRepeatPassword] = useState('');
 
     const handleSignUp = () => {
+<<<<<<< HEAD
         if (password !== RepeatPassword) {
             Alert.alert("Passwords do not match!")
         }
@@ -26,6 +27,14 @@ function SignUpScreen(props) {
 
         }
 
+=======
+        auth
+            .createUserWithEmailAndPassword(email, password)
+            .then(userCredentials => {
+                const user = userCredentials.user;
+            })
+            .catch(error => alert(error.message))
+>>>>>>> 51a9ae76305bc01d96c6163ef3f1ab3b953b54ad
 
     }
 

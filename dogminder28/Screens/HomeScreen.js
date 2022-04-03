@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native'
 import { auth } from '../firebase';
 import { useNavigation } from "@react-navigation/native";
@@ -38,3 +39,15 @@ const styles = StyleSheet.create({
 
     }
 })
+=======
+import React from 'react';
+import { View, Text, Alert, TouchableOpacity, Button, Image, StyleSheet, TextInput } from "react-native";
+
+function HomeScreen(props) {
+    return (
+        <Text>This is our home screen</Text>
+    );
+}
+
+export default HomeScreen;
+>>>>>>> 51a9ae76305bc01d96c6163ef3f1ab3b953b54ad

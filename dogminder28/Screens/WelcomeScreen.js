@@ -1,13 +1,18 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, TextInput, Alert, TouchableOpacity, Button, Image, StyleSheet } from "react-native";
+<<<<<<< HEAD
 import { auth } from '../firebase';
 import { useEffect, useState } from "react";
+=======
+import { useState } from "react";
+>>>>>>> 51a9ae76305bc01d96c6163ef3f1ab3b953b54ad
 
 
 
 
 function SignUpScreen(props) {
     const navigation = useNavigation(); //this is a variable that needs to be initialised on every page so that buttons can be used to navigate to different pages
+<<<<<<< HEAD
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
 
@@ -43,6 +48,20 @@ function SignUpScreen(props) {
                 value={Email}
                 onChangeText={text => setEmail(text)}
                 placeholder="Email"
+=======
+    const [Username, setUsername] = useState('');
+    const [Password, setPassword] = useState('');
+
+
+    return (
+
+        <View style={styles.container}>
+            <Image style={styles.icon} source={require('../assets/icon.png')} />
+            <TextInput style={styles.inputBox}
+                value={Username}
+                onChangeText={text => setUsername(text)}
+                placeholder="Username"
+>>>>>>> 51a9ae76305bc01d96c6163ef3f1ab3b953b54ad
                 placeholderTextColor={"#fff"} />
             <TextInput style={styles.inputBox}
                 value={Password}
@@ -55,7 +74,11 @@ function SignUpScreen(props) {
 
 
 
+<<<<<<< HEAD
             <TouchableOpacity style={styles.LoginButton} onPress={handleLogin}>
+=======
+            <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.replace('HomePage')}>
+>>>>>>> 51a9ae76305bc01d96c6163ef3f1ab3b953b54ad
                 <Text style={styles.ButtonText}>Sign In</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.SignUpButton} onPress={() => navigation.navigate('SignUpPage')}>
@@ -116,11 +139,14 @@ const styles = StyleSheet.create({
 
     },
 
+<<<<<<< HEAD
     backgroundVideo: {
 
 
     },
 
+=======
+>>>>>>> 51a9ae76305bc01d96c6163ef3f1ab3b953b54ad
 
     inputBox: {
         width: 300,
