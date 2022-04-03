@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, Alert, TouchableOpacity, Button, Image, StyleSheet, TextInput } from "react-native";
+
+import { db } from '../firebase';
 import { auth } from '../firebase';
+
 
 
 function SignUpScreen(props) {
@@ -11,18 +14,23 @@ function SignUpScreen(props) {
     const [password, setPassword] = useState('');
     const [RepeatPassword, setRepeatPassword] = useState('');
 
-    const handleSignUp = () => {
-        if (password !== RepeatPassword) {
+    const handleSignUp = () => { //firebase authentication so that info is sent to database
+        if (password !== RepeatPassword) { //checks to see if passwords match
             Alert.alert("Passwords do not match!")
         }
 
         else {
-            auth
-                .createUserWithEmailAndPassword(email, password)
-                .then(userCredentials => {
-                    const user = userCredentials.user;
+            auth.createUserWithEmailAndPassword(email, password)
+                .then(result => {
+                    db.collection("users")
+                        .doc(auth.currentUser.uid)
+                        .set({
+                            username,
+                            email
+                        })
+                    console.log(result)
                 })
-                .catch(error => alert(error.message))
+                .catch(error => alert(error.message)) //shows error message from api in the form of an alert
 
         }
 
@@ -33,12 +41,12 @@ function SignUpScreen(props) {
     return (
         <View style={styles.container}>
             <Image style={styles.icon} source={require('../assets/icon.png')} />
-            {/* <TextInput style={styles.inputBox}
+            <TextInput style={styles.inputBox}
                 placeholder="Username"
                 value={username}
                 onChangeText={setUsername}
-                placeholderTextColor={"#fff"} /> */ //we haven;t got usernames sorted yet
-            }
+                placeholderTextColor={"#fff"} />
+
 
 
             <TextInput style={styles.inputBox}

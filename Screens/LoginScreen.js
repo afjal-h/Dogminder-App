@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import { View, Text, TextInput, Alert, TouchableOpacity, Button, Image, StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
 import { auth } from '../firebase';
+import * as firebase from "firebase/app";
 
 
 
@@ -12,7 +13,7 @@ function SignUpScreen(props) {
 
 
     useEffect(() => { //checks and authenticates login info with the google firebase server
-        const unsubscribe = auth.onAuthStateChanged(user => {
+        const unsubscribe = firebase.auth.onAuthStateChanged(user => {
             if (user) {
                 navigation.replace('HomePage')
             }
