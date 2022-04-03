@@ -6,6 +6,7 @@ import SignUpScreen from './Screens/SignUpScreen'
 import LoginScreen from './Screens/LoginScreen'
 import SearchScreen from './Screens/SearchScreen'
 import BookScreen from './Screens/BookScreen'
+import HomeScreen from './Screens/HomeScreen'
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
   return (
@@ -16,6 +17,7 @@ const StackNavigator = () => {
         <Stack.Screen name="LoginPage" component={LoginScreen} />
         <Stack.Screen name="SearchPage" component={SearchScreen} />
         <Stack.Screen name="BookPage" component={BookScreen} />
+        <Stack.Screen name="HomePage" component={HomeScreen}/>
 
       </Stack.Group>
     </Stack.Navigator>

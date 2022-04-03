@@ -1,26 +1,47 @@
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import { View, Text, Alert, TouchableOpacity, Button, Image, StyleSheet, TextInput } from "react-native";
+import { auth } from '../firebase';
 
 
 function SignUpScreen(props) {
+    const navigation = useNavigation();
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [RepeatPassword, setRepeatPassword] = useState('');
 
+    const handleSignUp = () => {
+        if (password !== RepeatPassword) {
+            Alert.alert("Passwords do not match!")
+        }
+
+        else {
+            auth
+                .createUserWithEmailAndPassword(email, password)
+                .then(userCredentials => {
+                    const user = userCredentials.user;
+                })
+                .catch(error => alert(error.message))
+
+        }
+
+
+    }
+
 
     return (
         <View style={styles.container}>
             <Image style={styles.icon} source={require('../assets/icon.png')} />
-            <TextInput style={styles.inputBox}
+            {/* <TextInput style={styles.inputBox}
                 placeholder="Username"
                 value={username}
                 onChangeText={setUsername}
-                placeholderTextColor={"#fff"} />
+                placeholderTextColor={"#fff"} /> */ //we haven;t got usernames sorted yet
+            }
 
 
             <TextInput style={styles.inputBox}
-                secureTextEntry={true}
                 value={email}
                 onChangeText={setEmail}
                 placeholder="Email"
@@ -29,17 +50,27 @@ function SignUpScreen(props) {
 
             <TextInput style={styles.inputBox}
                 value={password}
+                onChangeText={setPassword}
                 placeholder="Password"
-                placeholderTextColor={"#fff"} />
+                placeholderTextColor={"#fff"}
+                secureTextEntry={true} />
+
+
             <TextInput style={styles.inputBox}
+                value={RepeatPassword}
+                onChangeText={setRepeatPassword}
                 secureTextEntry={true}
                 placeholder="Repeat Password"
                 placeholderTextColor={"#fff"} />
 
 
 
-            <TouchableOpacity style={styles.LoginButton}>
+            <TouchableOpacity style={styles.LoginButton} onPress={handleSignUp}>
                 <Text style={styles.ButtonText}>Register</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.SigninButton} onPress={() => navigation.navigate('WelcomePage')}>
+                <Text style={styles.ButtonText}>Back To Sign In</Text>
             </TouchableOpacity>
 
 
@@ -77,6 +108,12 @@ const styles = StyleSheet.create({
         color: "#fff"
 
     },
+    SigninButton: {
+        top: 80,
+        color: "#000",
+
+    },
+
 
     inputBox: {
         width: 300,
