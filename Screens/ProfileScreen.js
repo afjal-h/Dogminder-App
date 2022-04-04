@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, Text, View, Button } from 'react-native'
 import { auth } from '../firebase';
 import { useNavigation } from "@react-navigation/native";
 import React from 'react'
@@ -17,7 +17,7 @@ const HomeScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Text>HomeScreen</Text>
+            <Text>This is where the profile options will be</Text>
             <TouchableOpacity style={styles.LoginButton} onPress={handleSignOut}>
                 <Text style={styles.ButtonText}>Sign Out</Text>
             </TouchableOpacity>
@@ -37,4 +37,21 @@ const styles = StyleSheet.create({
         justifyContent: "center",
 
     }
+    ,
+    LoginButton:{
+        width: 100,
+        top: 30,
+        borderRadius: 25,
+        backgroundColor: "#bdbdbd",
+        paddingVertical: 10,
+
+        marginVertical: 10,
+        backgroundColor: "#808080",
+    },
+    ButtonText: {
+        textAlign: "center",
+        color: "#fff"
+
+    },
+    
 })
