@@ -14,6 +14,13 @@ const HomeScreen = () => {
                 navigation.replace("WelcomePage")
             })
             .catch(error => alert(error.message))
+
+    
+
+    }
+    const handleEditProfile = () => {
+        navigation.replace("EditProfilePage")
+        .catch(error => alert(error.message))
     }
 
 
@@ -54,7 +61,17 @@ const HomeScreen = () => {
                         <Text style={[styles.menuItemText, {marginTop:-20, marginLeft:32}]}>Sign Out</Text>
                     </View>
                 </TouchableRipple>
+
+                <TouchableRipple onPress={handleEditProfile}>
+                    <View style = {styles.menuItem}>
+                        <Icon name='account-edit' color="#FF6347" size={25}/>
+                        <Text style={[styles.menuItemText, {marginTop:-20, marginLeft:32}]}>Edit Profile</Text>
+                    </View>
+                </TouchableRipple>
+
             </View>
+
+            
             
             
         </SafeAreaView>
