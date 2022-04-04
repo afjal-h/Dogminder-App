@@ -3,7 +3,7 @@ import { View, Text, Alert, TouchableOpacity, Button, Image, StyleSheet, SafeAre
 
 function BookScreen(props) {
     return (
-        <SafeAreaView><Text>Hello World</Text></SafeAreaView>
+        <SafeAreaView><Text>This is the book screen for Kali</Text></SafeAreaView>
        
     );
 }

@@ -3,7 +3,7 @@ import { View, Text, Alert, TouchableOpacity, Button, Image, StyleSheet, SafeAre
 
 function SearchScreen(props) {
     return (
-        <SafeAreaView><Text>Hello World</Text></SafeAreaView>
+        <SafeAreaView><Text>This is the search screen for Shohani</Text></SafeAreaView>
        
     );
 }
