@@ -27,6 +27,7 @@ function ProfileStackScreen(){
   return(
   <Stack.Navigator screenOptions={{ headerShown: false }}>
     <Stack.Screen name="ProfilePage" component={ProfileScreen} />
+    <Stack.Screen name="EditProfilePage" component={EditProfileScreen} />
     
   </Stack.Navigator>
   )
@@ -34,14 +35,6 @@ function ProfileStackScreen(){
   
 }
 
-function EditProfileStackScreen(){
-  return(
-  <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="EditProfilePage" component={EditProfileScreen} />
-  </Stack.Navigator>
-  )
-  
-}
 
 function SearchStackScreen(){
   return(
@@ -66,9 +59,9 @@ const Tab= createBottomTabNavigator();
 function TabNav(){
   return(
   <Tab.Navigator>
-      <Tab.Screen name="Book" component={BookScreen}/>
-  <Tab.Screen name="Search" component={SearchScreen}/>
-  <Tab.Screen name="Profile" component={ProfileScreen}/>
+      <Tab.Screen name="Book" component={BookStackScreen}/>
+  <Tab.Screen name="Search" component={SearchStackScreen}/>
+  <Tab.Screen name="Profile" component={ProfileStackScreen}/>
 </Tab.Navigator>
   )
 

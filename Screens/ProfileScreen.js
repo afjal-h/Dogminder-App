@@ -18,10 +18,7 @@ const HomeScreen = () => {
     
 
     }
-    const handleEditProfile = () => {
-        navigation.replace("EditProfilePage")
-        .catch(error => alert(error.message))
-    }
+
 
 
     return (
@@ -62,7 +59,7 @@ const HomeScreen = () => {
                     </View>
                 </TouchableRipple>
 
-                <TouchableRipple onPress={handleEditProfile}>
+                <TouchableRipple onPress={()=>navigation.navigate('EditProfilePage')}>
                     <View style = {styles.menuItem}>
                         <Icon name='account-edit' color="#FF6347" size={25}/>
                         <Text style={[styles.menuItemText, {marginTop:-20, marginLeft:32}]}>Edit Profile</Text>
