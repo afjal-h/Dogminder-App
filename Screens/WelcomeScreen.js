@@ -96,11 +96,10 @@ const styles = StyleSheet.create({
         width: 100,
         top: 30,
         borderRadius: 25,
-        backgroundColor: "#bdbdbd",
+        backgroundColor: "#91877D",
         paddingVertical: 10,
 
         marginVertical: 10,
-        backgroundColor: "#808080",
 
     },
 
@@ -111,8 +110,13 @@ const styles = StyleSheet.create({
     },
 
     SignUpButton: {
+        paddingVertical: 5,
+        marginVertical: 10,
+
+        width: 250,
+        borderRadius: 25,
+        backgroundColor: "#91877D",
         top: 80,
-        color: "#000",
 
     },
 
@@ -127,7 +131,7 @@ const styles = StyleSheet.create({
         height: 40,
         top: 30,
         borderRadius: 25,
-        backgroundColor: "#bdbdbd",
+        backgroundColor: "#BBB0A5",
         paddingHorizontal: 16,
         marginVertical: 10,
 
