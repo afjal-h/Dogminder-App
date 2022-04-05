@@ -105,17 +105,12 @@ const styles = StyleSheet.create({
 
     ButtonText: {
         textAlign: "center",
-        color: "#fff"
+        color: "#000000"
 
     },
 
     SignUpButton: {
-        paddingVertical: 5,
-        marginVertical: 10,
 
-        width: 250,
-        borderRadius: 25,
-        backgroundColor: "#91877D",
         top: 80,
 
     },
