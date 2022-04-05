@@ -13,6 +13,7 @@ import ProfileScreen from './Screens/ProfileScreen'
 import SearchScreen from './Screens/SearchScreen'
 import BookScreen from './Screens/BookScreen'
 import EditProfileScreen from './Screens/EditProfileScreen'
+import PasswordResetScreen from './Screens/PasswordResetScreen'
 const Stack = createNativeStackNavigator();
 function WelcomeStackScreen() {
   return (
@@ -21,6 +22,7 @@ function WelcomeStackScreen() {
       <Stack.Screen name="WelcomePage" component={WelcomeScreen} />
       <Stack.Screen name="SignUpPage" component={SignUpScreen} />
       <Stack.Screen name="SignUpInfoPage" component={SignUpInfoScreen} />
+      <Stack.Screen name="PasswordResetPage" component={PasswordResetScreen} />
       <Stack.Screen name="HomePage" component={TabNav} />
 
     </Stack.Navigator>
