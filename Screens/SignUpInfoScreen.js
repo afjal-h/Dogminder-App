@@ -31,7 +31,7 @@ function SignUpScreen(props) {
 
     return (
         <View style={styles.container}>
-            <Image style={styles.icon} source={require('../assets/icon.png')} />
+            <Image style={styles.icon} source={require('../assets/dogPNG.png')} />
             <TextInput style={styles.inputBox}
                 placeholder="Dog Name"
                 value={DogName}
@@ -71,7 +71,7 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#beeede",
+        backgroundColor: "#fee4cb",
         alignItems: "center",
         justifyContent: "center",
 

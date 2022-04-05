@@ -2,7 +2,7 @@ import { StyleSheet, TouchableOpacity, Text, View, Button, Image, SafeAreaView }
 import { auth } from '../firebase';
 import { useNavigation } from "@react-navigation/native";
 import React from 'react'
-import {Avatar, Title, Caption, TouchableRipple,} from 'react-native-paper'
+import { Avatar, Title, Caption, TouchableRipple, } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const HomeScreen = () => {
@@ -18,7 +18,7 @@ const HomeScreen = () => {
 
 
     return (
-           <Text>HelloWorld</Text>
+        <Text>HelloWorld</Text>
 
     )
 }
@@ -28,12 +28,12 @@ export default HomeScreen
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#beeede",
-        
+        backgroundColor: "#fee4cb",
+
 
     }
     ,
-    LoginButton:{
+    LoginButton: {
         width: 100,
         top: 30,
         borderRadius: 25,
@@ -50,10 +50,10 @@ const styles = StyleSheet.create({
     },
 
     userImg: {
-        height:150,
+        height: 150,
         width: 150,
         borderRadius: 75,
 
     },
-    
+
 })
