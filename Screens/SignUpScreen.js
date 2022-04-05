@@ -11,6 +11,7 @@ function SignUpScreen(props) {
     const navigation = useNavigation();
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [RepeatPassword, setRepeatPassword] = useState('');
 
@@ -26,9 +27,11 @@ function SignUpScreen(props) {
                         .doc(auth.currentUser.uid)
                         .set({
                             username,
-                            email
+                            email,
+                            phone
                         })
                     console.log(result)
+                    navigation.replace('SignUpInfoPage')
                 })
                 .catch(error => alert(error.message)) //shows error message from api in the form of an alert
 
@@ -53,6 +56,13 @@ function SignUpScreen(props) {
                 value={email}
                 onChangeText={setEmail}
                 placeholder="Email"
+                placeholderTextColor={"#fff"} />
+
+            <TextInput style={styles.inputBox}
+                value={phone}
+                keyboardType="numeric"
+                onChangeText={setPhone}
+                placeholder="Phone Number"
                 placeholderTextColor={"#fff"} />
 
 
