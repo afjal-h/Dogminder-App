@@ -19,8 +19,7 @@ function SignUpScreen(props) {
             .doc(auth.currentUser.uid)
             .set({
                 DogName,
-                Breed,
-                Location
+                Breed
             })
             .catch(error => alert(error.message)) //shows error message from api in the form of an alert
         navigation.replace('HomePage')
@@ -45,14 +44,6 @@ function SignUpScreen(props) {
                 onChangeText={setBreed}
                 placeholder="Breed"
                 placeholderTextColor={"#fff"} />
-
-
-            <TextInput style={styles.inputBox}
-                value={Location}
-                onChangeText={setLocation}
-                placeholder="Location"
-                placeholderTextColor={"#fff"} />
-
 
 
 

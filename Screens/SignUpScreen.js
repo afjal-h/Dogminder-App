@@ -12,6 +12,7 @@ function SignUpScreen(props) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [location, setLocation] = useState('');
     const [password, setPassword] = useState('');
     const [RepeatPassword, setRepeatPassword] = useState('');
 
@@ -28,7 +29,8 @@ function SignUpScreen(props) {
                         .set({
                             username,
                             email,
-                            phone
+                            phone,
+                            location
                         })
                     console.log(result)
                     navigation.replace('SignUpInfoPage')
@@ -64,6 +66,13 @@ function SignUpScreen(props) {
                 onChangeText={setPhone}
                 placeholder="Phone Number"
                 placeholderTextColor={"#fff"} />
+
+            <TextInput style={styles.inputBox}
+                value={location}
+                onChangeText={setLocation}
+                placeholder="Location"
+                placeholderTextColor={"#fff"} />
+
 
 
             <TextInput style={styles.inputBox}
