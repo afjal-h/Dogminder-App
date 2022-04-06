@@ -12,21 +12,11 @@ function SignUpScreen(props) {
     const [Password, setPassword] = useState('');
 
 
-    useEffect(() => { //checks and authenticates login info with the google firebase server
-        const unsubscribe = firebase.auth.onAuthStateChanged(user => {
-            if (user) {
-                navigation.replace('HomePage')
-            }
-        })
-
-        return unsubscribe
-
-    }, [])
-
-    const handleLogin = () => {
-        auth.signInWithEmailAndPassword(Email, Password)
+    const handleReset = () => {
+        auth.sendPasswordResetEmail(Email)
             .then(userCredentials => {
-                const user = userCredentials.user;
+                alert("Reset link has been sent!")
+                navigation.replace('WelcomePage')
             })
             .catch(error => alert(error.message))
 
@@ -42,22 +32,17 @@ function SignUpScreen(props) {
                 onChangeText={text => setEmail(text)}
                 placeholder="Email"
                 placeholderTextColor={"#fff"} />
-            <TextInput style={styles.inputBox}
-                value={Password}
-                onChangeText={text => setPassword(text)}
-                secureTextEntry={true}
-                placeholder="Password"
-                placeholderTextColor={"#fff"} />
 
 
 
 
 
-            <TouchableOpacity style={styles.LoginButton} onPress={handleLogin}>
-                <Text style={styles.ButtonText}>Sign In</Text>
+
+            <TouchableOpacity style={styles.LoginButton} onPress={handleReset}>
+                <Text style={styles.ButtonText}>Reset</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.SignUpButton} onPress={() => navigation.navigate('SignUpPage')}>
-                <Text style={styles.ButtonText}>Don't have an account? Create one</Text>
+            <TouchableOpacity style={styles.SignUpButton} onPress={() => navigation.navigate('WelcomePage')}>
+                <Text style={styles.ButtonText}>Figured out your password? Sign In</Text>
             </TouchableOpacity>
             {/* <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('SearchPage')}>
                 <Text style={styles.ButtonText}>Search Test</Text>
@@ -83,6 +68,12 @@ const styles = StyleSheet.create({
     }
 
     ,
+
+    SignUpButton: {
+
+        top: 80,
+
+    },
     LoginButton: {
         width: 100,
         top: 30,
