@@ -18,7 +18,9 @@ const HomeScreen = () => {
 
 
     return (
+        <View style={styles.container}>
         <Text>HelloWorld</Text>
+        </View>
 
     )
 }

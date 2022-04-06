@@ -8,12 +8,15 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { db } from '../firebase';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { setSelectedLog } from 'react-native/Libraries/LogBox/Data/LogBoxData';
 const HomeScreen = () => {
     const navigation = useNavigation();
     var UserData = {}
     const [username, setUsername] = useState('');
     const [phone, setPhone] = useState('');
     const [location, setLocation] = useState('');
+    const [DogName, setDogName] = useState('');
+    const [Breed, setBreed] = useState('');
     const handleSignOut = () => {
         auth
             .signOut()
@@ -48,10 +51,30 @@ const HomeScreen = () => {
         setUsername(UserData.username)
         setLocation(UserData.location)
         setPhone(UserData.phone)
+        
+
+    }
+
+    async function getDog() {
+        const cityRef = db.collection('Dog Info').doc(auth.currentUser.uid);
+        const doc = await cityRef.get();
+        if (!doc.exists) {
+            console.log('No such document!');
+        } else {
+            console.log(doc.data());
+            UserData = doc.data();
+            console.log(UserData);
+        }
+        console.log(JSON.stringify(UserData.username))
+        setDogName(UserData.DogName)
+        setBreed(UserData.Breed)
+        
+        
 
     }
 
     getUser();
+    getDog();
 
 
     return (
@@ -63,7 +86,7 @@ const HomeScreen = () => {
                 </View>
             </View>
             <View style={{ marginLeft: 105 }}>
-                <Title style={[styles.title, { marginTop: -60, marginBottom: 5, }]}>{username}</Title>
+                <Title style={[styles.title, { marginTop: -60, marginBottom: 5, }]}>@{username}</Title>
             </View>
             <View style={styles.userInfoSection}>
                 <View style={[styles.row, { marginTop: 30, marginLeft: 10 }]}>
@@ -83,6 +106,15 @@ const HomeScreen = () => {
                     <Text style={{ color: "#777777", marginLeft: 25, marginTop: -20 }}>{auth.currentUser.email}</Text>
                 </View>
             </View>
+            <View style={styles.userInfoSection}>
+                <View style={[styles.row, { marginTop: 20, marginLeft: 10 }]}>
+                    <Icon name='dog' size={20} />
+                    <Text style={{ color: "#777777", marginLeft: 25, marginTop: -20 }}>{DogName} - {Breed}</Text>
+                </View>
+            </View>
+            
+
+
 
             <View style={[styles.menuWrapper, { marginTop: 20, marginLeft: 10, }]}>
                 <TouchableRipple onPress={handleSignOut}>
