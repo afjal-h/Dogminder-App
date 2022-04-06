@@ -1,9 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { createStackNavigator } from '@react-navigation/stack';
 
 //screens
 import WelcomeScreen from './Screens/WelcomeScreen'
