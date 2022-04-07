@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
         marginBottom:20,
         backgroundColor:"#fee4cb",
         justifyContent:"space-around",
+        borderRadius:10,
     },
 
     bookinglocations: {
@@ -94,6 +95,7 @@ const styles = StyleSheet.create({
         backgroundColor:"#f0c69e",
         paddingBottom:20,
         justifyContent:"space-around",
+        borderRadius:10,
     },
 
     textstyle:{
