@@ -4,7 +4,7 @@ import { View, Text, Alert, TouchableOpacity, Button, Image, StyleSheet, SafeAre
 function BookScreen(props) {
     return (
          <SafeAreaView style={styles.container}>
-             <ScrollView></ScrollView>
+             <ScrollView>
             <View style={styles.bookinglocations}>
                 <Text style={styles.headerstyle}>Current Bookings</Text>
                 <View style={styles.bookings}>
@@ -65,6 +65,7 @@ function BookScreen(props) {
 
                 </View>
             </View>
+            </ScrollView>
          </SafeAreaView>
 
     );
