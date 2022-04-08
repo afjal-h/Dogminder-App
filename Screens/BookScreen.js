@@ -34,7 +34,7 @@ function BookScreen(props) {
                     <Text style={styles.textstyle}>Time:</Text>
                     <Text style={styles.textstyle}>Status Update: Finished</Text>
                     <Button 
-                        title="Cancel"
+                        title="Rate"
                         color="#d4a77d"
                         onPress={() => Alert.alert('Button pressed')}
                     />
@@ -46,7 +46,7 @@ function BookScreen(props) {
                     <Text style={styles.textstyle}>Time:</Text>
                     <Text style={styles.textstyle}>Status Update: Finished</Text>
                     <Button 
-                        title="Cancel"
+                        title="Rate"
                         color="#d4a77d"
                         onPress={() => Alert.alert('Button pressed')}
                     />
@@ -58,7 +58,7 @@ function BookScreen(props) {
                     <Text style={styles.textstyle}>Time:</Text>
                     <Text style={styles.textstyle}>Status Update: Finished</Text>
                     <Button 
-                        title="Cancel"
+                        title="Rate"
                         color="#d4a77d"
                         onPress={() => Alert.alert('Button pressed')}
                     />
