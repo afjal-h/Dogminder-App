@@ -39,6 +39,7 @@ function SignUpScreen(props) {
                 .catch(error => alert(error.message)) //shows error message from api in the form of an alert
 
         }
+        
 
 
     }
