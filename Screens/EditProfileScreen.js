@@ -17,6 +17,7 @@ function EditProfileScreen(props) {
     const navigation = useNavigation();
     const [phone, setPhone] = useState('');
     const [location, setLocation] = useState('');
+    const [Bio, setBio] = useState('');
 
 
 
@@ -26,9 +27,11 @@ function EditProfileScreen(props) {
             .doc(auth.currentUser.uid)
             .update({
                 phone: phone,
-                location: location
+                location: location,
+                bio: Bio
             })
         navigation.replace('SignUpInfoPage')
+
     }
 
 
@@ -54,6 +57,11 @@ function EditProfileScreen(props) {
                 value={location}
                 onChangeText={setLocation}
                 placeholder="Location"
+                placeholderTextColor={"#fff"} />
+            <TextInput style={styles.inputBox}
+                value={Bio}
+                onChangeText={setBio}
+                placeholder="Bio"
                 placeholderTextColor={"#fff"} />
 
 

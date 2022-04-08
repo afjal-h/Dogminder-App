@@ -17,6 +17,7 @@ const HomeScreen = () => {
     const [location, setLocation] = useState('');
     const [DogName, setDogName] = useState('');
     const [Breed, setBreed] = useState('');
+    const [Bio, setBio] = useState('');
     const handleSignOut = () => {
         auth
             .signOut()
@@ -51,7 +52,8 @@ const HomeScreen = () => {
         setUsername(UserData.username)
         setLocation(UserData.location)
         setPhone(UserData.phone)
-        
+        setBio(UserData.bio)
+
 
     }
 
@@ -68,8 +70,8 @@ const HomeScreen = () => {
         console.log(JSON.stringify(UserData.username))
         setDogName(UserData.DogName)
         setBreed(UserData.Breed)
-        
-        
+
+
 
     }
 
@@ -112,7 +114,12 @@ const HomeScreen = () => {
                     <Text style={{ color: "#777777", marginLeft: 25, marginTop: -20 }}>{DogName} - {Breed}</Text>
                 </View>
             </View>
-            
+            <View style={styles.userInfoSection}>
+                <View style={[styles.row, { marginTop: 20, marginLeft: 10 }]}>
+                    <Text style={{ color: "#777777", marginLeft: 25, marginTop: -20 }}>Bio: {Bio}</Text>
+                </View>
+            </View>
+
 
 
 
