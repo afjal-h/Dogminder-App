@@ -7,6 +7,7 @@ import { auth } from '../firebase';
 
 
 
+
 function SignUpScreen(props) {
     const navigation = useNavigation();
     const [username, setUsername] = useState('');

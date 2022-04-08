@@ -7,11 +7,11 @@ import { auth } from '../firebase';
 
 
 
+
 function SignUpScreen(props) {
     const navigation = useNavigation();
     const [DogName, setDogname] = useState('');
     const [Breed, setBreed] = useState('');
-    const [Location, setLocation] = useState('');
 
     const handleSignUp = () => { //firebase authentication so that info is sent to database
 

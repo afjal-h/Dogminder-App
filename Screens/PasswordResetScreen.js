@@ -1,15 +1,13 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, TextInput, Alert, TouchableOpacity, Button, Image, StyleSheet } from "react-native";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { auth } from '../firebase';
-import * as firebase from "firebase/app";
 
 
 
 function SignUpScreen(props) {
     const navigation = useNavigation(); //this is a variable that needs to be initialised on every page so that buttons can be used to navigate to different pages
     const [Email, setEmail] = useState('');
-    const [Password, setPassword] = useState('');
 
 
     const handleReset = () => {
@@ -44,12 +42,6 @@ function SignUpScreen(props) {
             <TouchableOpacity style={styles.SignUpButton} onPress={() => navigation.navigate('WelcomePage')}>
                 <Text style={styles.ButtonText}>Figured out your password? Sign In</Text>
             </TouchableOpacity>
-            {/* <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('SearchPage')}>
-                <Text style={styles.ButtonText}>Search Test</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.LoginButton} onPress={() => navigation.navigate('BookPage')}>
-                <Text style={styles.ButtonText}>Book Test</Text>
-            </TouchableOpacity> */}
 
         </View>
     );

@@ -40,16 +40,14 @@ const HomeScreen = () => {
     //fetch info from database for specific user
 
     async function getUser() {
-        const cityRef = db.collection('users').doc(auth.currentUser.uid);
-        const doc = await cityRef.get();
+        const userRef = db.collection('users').doc(auth.currentUser.uid);
+        const doc = await userRef.get();
         if (!doc.exists) {
             console.log('No such document!');
         } else {
             console.log(doc.data());
             UserData = doc.data();
-            console.log(UserData);
         }
-        console.log(JSON.stringify(UserData.username))
         setUsername(UserData.username)
         setLocation(UserData.location)
         setPhone(UserData.phone)
