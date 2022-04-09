@@ -81,8 +81,10 @@ export default function Searchbar({ values, updateSearch, style }) {
 const styles = StyleSheet.create({
     txtError: {
         width: '90%',
-        marginTop: '2%',
-        marginLeft: '5%'
+        marginTop: '-24%',
+        marginLeft: '10%',
+        //backgroundColor: 'red',
+        
 
 
     },
@@ -95,10 +97,11 @@ const styles = StyleSheet.create({
 
     },
     textInput: {
-        //  backgroundColor:'green',
+        //backgroundColor:'green',
         flex: 1,
         marginLeft: '10%',
         marginTop: '-5.5%'
+
     },
     vwSearch: {
         flex: 0.2,
@@ -140,6 +143,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         //marginTop: '-10%',
         //backgroundColor: 'red'
+        
 
         
     },
