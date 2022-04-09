@@ -114,11 +114,14 @@ const HomeScreen = () => {
                     <Text style={{ color: "#777777", marginLeft: 25, marginTop: -20 }}>{DogName} - {Breed}</Text>
                 </View>
             </View>
+
             <View style={styles.userInfoSection}>
                 <View style={[styles.row, { marginTop: 20, marginLeft: 10 }]}>
+                    <Icon name='border-color' size={20} />
                     <Text style={{ color: "#777777", marginLeft: 25, marginTop: -20 }}>Bio: {Bio}</Text>
                 </View>
             </View>
+            
 
 
 
