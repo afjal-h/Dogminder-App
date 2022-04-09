@@ -8,12 +8,13 @@ import {
     StatusBar,
     FlatList,
     TouchableOpacity,
-    TextInput, Image
+    TextInput, Image, Picker
 } from 'react-native';
 
 export default function Searchbar({ values, updateSearch, style }) {
     const [query, setQuery] = useState()
-    const [error, setError] = useState("Test string ")
+    const [error, setError] = useState(".")
+    const [selectedValue, setSelectedValue] = useState("java");
     return (
         <View style={styles.container}>
             <View style={styles.searchContainer}>
@@ -55,6 +56,18 @@ export default function Searchbar({ values, updateSearch, style }) {
                         : <View style={styles.vwClear} />
                 }
             </View>
+            <View style={styles.dropdown}>
+            <Text style={styles.textstyle}>Search dog minder by:</Text>
+              <Picker
+                selectedValue={selectedValue}
+                style={{ height: 50, width: 150 }}
+                onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+              >
+               <Picker.Item label="Service" value="service" />
+               <Picker.Item label="Price" value="price" />
+               <Picker.Item label="Rating" value="rating" />
+             </Picker>
+            </View>
             {
                 error &&
                 <Text style={styles.txtError}>
@@ -62,6 +75,7 @@ export default function Searchbar({ values, updateSearch, style }) {
                 </Text>
             }
         </View>
+        
     )
 }
 const styles = StyleSheet.create({
@@ -97,8 +111,8 @@ const styles = StyleSheet.create({
     },
     icSearch: {
         height: 18, width: 18,
-        marginTop: '4.5%',
-        marginLeft: '2%'
+        marginTop: '3.5%',
+        marginLeft: '2.5%'
         //alignItems:'flex-start'
     },
     icClear: {
@@ -119,5 +133,24 @@ const styles = StyleSheet.create({
 
         paddingTop: 40,
         flex: 1
+    },
+    dropdown: {
+        //flex: 0.5,
+        paddingTop: 30,
+        alignItems: "center",
+        //marginTop: '-10%',
+        //backgroundColor: 'red'
+
+        
+    },
+
+    textstyle: {
+    
+        fontSize: 25,
+        color: "#cd853f",
+        //fontweight: 'bold'
+        //marginTop: '-5%'
+        //paddingTop: 40 px
+
     },
 });
