@@ -63,10 +63,7 @@ function EditProfileScreen(props) {
                 placeholder="Location"
                 placeholderTextColor={"#fff"} />
             
-            locationB = True;
-            if setLocation == ''{
-                locationB = False
-            }
+            
             <TextInput style={styles.inputBox}
                 value={Bio}
                 onChangeText={setBio}
