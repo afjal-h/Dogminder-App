@@ -48,9 +48,13 @@ function EditProfileScreen(props) {
 
             <TextInput style={styles.inputBox}
                 value={phone}
+                
+
                 keyboardType="numeric"
                 onChangeText={setPhone}
                 placeholder="Phone Number"
+
+                
                 placeholderTextColor={"#fff"} />
 
             <TextInput style={styles.inputBox}
@@ -58,6 +62,11 @@ function EditProfileScreen(props) {
                 onChangeText={setLocation}
                 placeholder="Location"
                 placeholderTextColor={"#fff"} />
+            
+            locationB = True;
+            if setLocation == ''{
+                locationB = False
+            }
             <TextInput style={styles.inputBox}
                 value={Bio}
                 onChangeText={setBio}
