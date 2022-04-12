@@ -289,7 +289,8 @@ export default function Searchbar({ values, updateSearch, style }) {
       <View
         style={{ height: "70%" }}>
         <FlatList
-          data={selectedService ? dataFromState.sort((a, b) => {
+          data={selectedValue ? dataFromState.sort((a, b) => {
+
             if (selectedValue === "low price") {
               if (a.Price > b.Price) {
                 return 1
