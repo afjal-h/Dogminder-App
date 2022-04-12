@@ -20,7 +20,7 @@ export default function Searchbar({ values, updateSearch, style }) {
   const [dataFromState, setData] = useState(data);
   const [query, setQuery] = useState()
   const [error, setError] = useState(".")
-  const [selectedValue, setSelectedValue] = useState("java");
+  const [selectedValue, setSelectedValue] = useState();
 
   const data = [{
     "Name": "Cornie Tumayan",
@@ -204,6 +204,7 @@ export default function Searchbar({ values, updateSearch, style }) {
           }}
           style={{ width: 40, height: 40, top: 25, borderRadius: 75, backgroundColor: '#696880' }}
         />
+        {console.log(selectedValue)}
         <Text style={styles.baseText}>{item.Name}</Text>
         <Text style={styles.baseText}>{item.Location}    <Text style={styles.hour}>{item.Price} per hour</Text></Text>
 
@@ -268,20 +269,53 @@ export default function Searchbar({ values, updateSearch, style }) {
           style={{ height: 50, width: 200 }}
           onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
         >
-          <Picker.Item label="-Choose-" value="choose" />
-          <Picker.Item label="Service: dog sitting" value="service" />
-          <Picker.Item label="Service: dog walking" value="service" />
-          <Picker.Item label="Price: low to high" value="price" />
-          <Picker.Item label="Price: high to low" value="price" />
-          <Picker.Item label="Rating: low to high" value="rating" />
-          <Picker.Item label="Rating: high to low" value="rating" />
+          < Picker.Item label="-Choose-" value="choose" />
+          <Picker.Item label="Service: dog sitting" value="sit" />
+          <Picker.Item label="Service: dog walking" value="walk" />
+          <Picker.Item label="Price: low to high" value="low price" />
+          <Picker.Item label="Price: high to low" value="high price" />
+          <Picker.Item label="Rating: low to high" value="low rating" />
+          <Picker.Item label="Rating: high to low" value="high rating" />
         </Picker>
 
       </View>
       <View
         style={{ height: "77%" }}>
         <FlatList
-          data={dataFromState}
+          data={selectedValue ? dataFromState.sort((a, b) => {
+            if (selectedValue === "low price") {
+              if (a.Price > b.Price) {
+                return 1
+              }
+              else {
+                return -1
+              }
+            }
+            if (selectedValue === "high price") {
+              if (a.Price > b.Price) {
+                return -1
+              }
+              else {
+                return 1
+              }
+            }
+            if (selectedValue === "walk") {
+              if (a.Walker == true) {
+                return 1
+              }
+              else {
+                return -1
+              }
+            }
+            if (selectedValue === "sit") {
+              if (a.Sitter == true) {
+                return 1
+              }
+              else {
+                return -1
+              }
+            }
+          }) : dataFromState}
           renderItem={item}
           keyExtractor={(item, index) => index.toString()} />
       </View>
