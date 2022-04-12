@@ -29,7 +29,14 @@ function EditProfileScreen(props) {
                 phone: phone,
                 location: location,
                 bio: Bio
+
+                
             })
+             
+            
+
+
+            
         navigation.replace('SignUpInfoPage')
 
     }

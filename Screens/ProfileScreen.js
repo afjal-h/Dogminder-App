@@ -9,15 +9,21 @@ import { db } from '../firebase';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import { setSelectedLog } from 'react-native/Libraries/LogBox/Data/LogBoxData';
+
+
 const HomeScreen = () => {
     const navigation = useNavigation();
     var UserData = {}
+    
     const [username, setUsername] = useState('');
     const [phone, setPhone] = useState('');
     const [location, setLocation] = useState('');
     const [DogName, setDogName] = useState('');
     const [Breed, setBreed] = useState('');
     const [Bio, setBio] = useState('');
+    
+  
+
     const handleSignOut = () => {
         auth
             .signOut()
@@ -26,6 +32,10 @@ const HomeScreen = () => {
             })
             .catch(error => alert(error.message))
     }
+
+    
+
+
     const firebaseConfig = {
         apiKey: "AIzaSyBuJCiTSzQ9IMLSfMM8eRt5IRhyDnZHKzk",
         authDomain: "dogminder-app.firebaseapp.com",
@@ -74,6 +84,8 @@ const HomeScreen = () => {
 
 
     }
+
+    
 
     getUser();
     getDog();
@@ -145,8 +157,14 @@ const HomeScreen = () => {
 
 
 
+           
+
+
+
 
         </SafeAreaView>
+
+        
 
 
 
@@ -186,5 +204,17 @@ const styles = StyleSheet.create({
         borderRadius: 75,
 
     },
+
+    fields: {
+    
+      },
+      
+      avatar: {
+        
+        width: 80,
+        height: 80,
+        borderRadius: 75,
+        
+      }
 
 })

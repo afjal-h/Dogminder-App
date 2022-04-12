@@ -10,6 +10,7 @@ import {
     TouchableOpacity,
     TextInput, Image, Picker
 } from 'react-native';
+import { borderLeftColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 
 export default function Searchbar({ values, updateSearch, style }) {
@@ -182,11 +183,29 @@ export default function Searchbar({ values, updateSearch, style }) {
 
       const item =({item})=>{
           return(
+            
               <TouchableOpacity style={styles.box}>
-                  <Text>{item.Name}</Text>
-                  <Text>{item.Location}</Text>
+
+<Image
+  source={{
+    uri: item.Pic,
+    cache: 'only-if-cached'
+  }}
+  style={{ width: 40, height: 40,top: 25 }}
+/>
+                <Text style={styles.baseText}>
+                
+
+                  <Text>       </Text>
+                  <Text>{item.Name},</Text>
+                  <Text> </Text>
+                  <Text>{item.Location},</Text>
+                  <Text> </Text>
                   <Text>{item.Price} per hour</Text>
+                  </Text>
               </TouchableOpacity>
+              
+              
           )
 
       }
@@ -283,14 +302,37 @@ const styles = StyleSheet.create({
 
     },
     box:{
-        width: "90%",
-        height: 100,
-        borderRadius: 25,
-        backgroundColor: "#BBB0A5",
+        width: "98%",
+        height: 90,
+        borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+        backgroundColor: "#FFEFC0",
         paddingHorizontal: 16,
         marginVertical: 10,
-        left:"5%"
+        left:"0%",
+       
+        textAlignVertical: "bottom",
+        
+        
+       
     },
+
+    pfp:{
+      borderRadius:75,
+
+    },
+
+    
+
+    baseText:{
+      fontWeight: 'bold',
+      textAlign: 'right',
+      fontFamily: 'monospace',
+      fontSize:15,
+
+
+    },
+
     vwClear: {
         //backgroundColor:'blue',
         flex: 0.2,
