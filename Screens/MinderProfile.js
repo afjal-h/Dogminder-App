@@ -29,7 +29,7 @@ function SignUpScreen(profile) {
                 <Text
                     style={{ textAlign: 'left', width: 350, top: 15 }}>{profile.route.params.Bio}</Text>
                 <Text
-                    style={{ fontWeight: 'bold', fontSize: 20, top: 30, textAlign: "center" }}>{profile.route.params.Price} Per Hour</Text>
+                    style={{ fontWeight: 'bold', fontSize: 20, top: 30, textAlign: "center" }}>£{profile.route.params.Price} Per Hour</Text>
                 <TouchableOpacity style={styles.LoginButton} >
                     <Text style={styles.ButtonText}>Book Now</Text>
                 </TouchableOpacity>

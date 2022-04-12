@@ -227,7 +227,7 @@ export default function Searchbar({ values, updateSearch, style }) {
         />
         {console.log("Walker:", item.Walker)}
         <Text style={styles.baseText}>{item.Name}</Text>
-        <Text style={styles.baseText}>{item.Location}    <Text style={styles.hour}>{item.Price} per hour</Text></Text>
+        <Text style={styles.baseText}>{item.Location}    <Text style={styles.hour}>£{item.Price} per hour</Text></Text>
       </TouchableOpacity>
 
 
@@ -309,8 +309,7 @@ export default function Searchbar({ values, updateSearch, style }) {
       <View
         style={{ height: "70%" }}>
         <FlatList
-          data={selectedValue ? dataFromState.sort((a, b) => {
-
+          data={selectedService ? dataFromState.sort((a, b) => {
             if (selectedValue === "low price") {
               if (a.Price > b.Price) {
                 return 1
