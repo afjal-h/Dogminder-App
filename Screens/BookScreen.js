@@ -3,9 +3,6 @@ import {Alert, Button, Image, SafeAreaView, ScrollView, StyleSheet, Text, View} 
 import {TouchableOpacity} from "react-native";
 import moment from "moment";
 //let bookingdata=[];
-const [ownername, setOwnername] = useState("");
-const [dogname, setDogname] = useState("");
-const [time, setTime] = useState(0);
 
 
 const BookingStatusEnum = {
@@ -27,10 +24,12 @@ export interface Booking {
 
 function sample_bookings() {
     let bled = [];
-
+    const [ownername, setOwnername] = useState("");
+    const [dogname, setDogname] = useState("");
+    const [time, setTime] = useState(0);
     let booking: Booking = {
         id: 1,
-        ownerName: bookingdata.ownername,
+        ownerName: "Name Name",
         dogName: "Woof Woof",
         time: 1049629365,
         status: BookingStatusEnum.FINISHED,
@@ -87,9 +86,9 @@ function sample_bookings() {
 
     let booking6: Booking ={
         id: 6,
-        ownerName: {ownername},
-        dogName: {dogname},
-        time: {time},
+        ownerName: ownername,
+        dogName: dogname,
+        time: time,
         status: BookingStatusEnum.ONGOING,
         showRating: false,
         rating: 3
@@ -164,19 +163,7 @@ function BookScreen(props) {
         updateBooking(bookingId, 'showRating', true);
     }
 
-<<<<<<< HEAD
     const [shouldShow, setShouldShow] = useState(true);
-=======
-
-    function handleCompletePress(bookingId: number) {
-        updateBooking(bookingId, 'status', BookingStatusEnum.FINISHED);
-    }
-
-    function handleCancelPress(bookingId: number) {
-        updateBooking(bookingId, 'status', BookingStatusEnum.CANCELLED);
-    }
-
->>>>>>> 1c681ea1e8be510466981bb9806338f660801b49
 
     return (
         <SafeAreaView style={styles.container}>
@@ -202,11 +189,7 @@ function BookScreen(props) {
                                             <Button
                                                 title="Complete"
                                                 color="#d4a77d"
-<<<<<<< HEAD
                                                 onPress={() => Alert.alert('Completed') }
-=======
-                                                onPress={() => handleCompletePress(booking.id)}
->>>>>>> 1c681ea1e8be510466981bb9806338f660801b49
                                             />
                                             <View style={styles.space}/>
                                             <Button
