@@ -1,3 +1,4 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
@@ -11,9 +12,11 @@ import {
   TextInput, Image, Picker
 } from 'react-native';
 import { borderLeftColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
+import { useNavigation } from "@react-navigation/native";
 
 
 export default function Searchbar({ values, updateSearch, style }) {
+  const navigation = useNavigation(); //this is a variable that needs to be initialised on every page so that buttons can be used to navigate to different pages
   const [dataFromState, setData] = useState(data);
   const [query, setQuery] = useState()
   const [error, setError] = useState(".")
@@ -38,7 +41,7 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Nananne Medlar",
     "Location": "Manchester",
-    "Bio": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+    "Bio": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
     "Price": "£5.68",
     "Pic": "https://robohash.org/facerenecessitatibuscorrupti.png?size=50x50&set=set1",
     "Walker": true,
@@ -69,7 +72,7 @@ export default function Searchbar({ values, updateSearch, style }) {
     "Sitter": false
   }, {
     "Name": "Marcella Dineen",
-    "Location": "Qiaotou",
+    "Location": "Cambridge",
     "Bio": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
     "Price": "£1.73",
     "Pic": "https://robohash.org/utdistinctioqui.png?size=50x50&set=set1",
@@ -77,7 +80,7 @@ export default function Searchbar({ values, updateSearch, style }) {
     "Sitter": false
   }, {
     "Name": "Meridel Argent",
-    "Location": "Babura",
+    "Location": "Nottingham",
     "Bio": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
     "Price": "£7.83",
     "Pic": "https://robohash.org/voluptatemquisconsequatur.png?size=50x50&set=set1",
@@ -85,7 +88,7 @@ export default function Searchbar({ values, updateSearch, style }) {
     "Sitter": true
   }, {
     "Name": "Lonnard Loweth",
-    "Location": "Mankoeng",
+    "Location": "Bath",
     "Bio": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
     "Price": "£2.34",
     "Pic": "https://robohash.org/cupiditaterepellatest.png?size=50x50&set=set1",
@@ -93,7 +96,7 @@ export default function Searchbar({ values, updateSearch, style }) {
     "Sitter": true
   }, {
     "Name": "Kathie Devenish",
-    "Location": "Lincoln",
+    "Location": "London",
     "Bio": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.",
     "Price": "£0.40",
     "Pic": "https://robohash.org/eosadipisciaut.png?size=50x50&set=set1",
@@ -101,7 +104,7 @@ export default function Searchbar({ values, updateSearch, style }) {
     "Sitter": false
   }, {
     "Name": "Sophie Dutteridge",
-    "Location": "Jamshoro",
+    "Location": "Norwich",
     "Bio": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
     "Price": "£0.11",
     "Pic": "https://robohash.org/beataequoslaboriosam.png?size=50x50&set=set1",
@@ -109,7 +112,7 @@ export default function Searchbar({ values, updateSearch, style }) {
     "Sitter": true
   }, {
     "Name": "Arnaldo Gores",
-    "Location": "La Courneuve",
+    "Location": "Bradford",
     "Bio": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
     "Price": "£0.62",
     "Pic": "https://robohash.org/sedipsumet.png?size=50x50&set=set1",
@@ -117,7 +120,7 @@ export default function Searchbar({ values, updateSearch, style }) {
     "Sitter": false
   }, {
     "Name": "Cash Ruddiforth",
-    "Location": "Gapan",
+    "Location": "Leicester",
     "Bio": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
     "Price": "£5.64",
     "Pic": "https://robohash.org/sintvitaemolestias.png?size=50x50&set=set1",
@@ -125,7 +128,7 @@ export default function Searchbar({ values, updateSearch, style }) {
     "Sitter": false
   }, {
     "Name": "Madelon Rycraft",
-    "Location": "Unisław",
+    "Location": "Oxford",
     "Bio": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
     "Price": "£3.30",
     "Pic": "https://robohash.org/utestnemo.png?size=50x50&set=set1",
@@ -184,7 +187,15 @@ export default function Searchbar({ values, updateSearch, style }) {
   const item = ({ item }) => {
     return (
 
-      <TouchableOpacity style={styles.box}>
+      <TouchableOpacity style={styles.box}
+        onPress={() => navigation.navigate('MinderScreen', {
+          Name: item.Name,
+          Bio: item.Bio,
+          Location: item.Location,
+          Price: item.Price,
+          Pic: item.Pic
+
+        })}>
 
         <Image
           source={{
@@ -268,7 +279,7 @@ export default function Searchbar({ values, updateSearch, style }) {
 
       </View>
       <View
-        style={{ height: "75%" }}>
+        style={{ height: "77%" }}>
         <FlatList
           data={dataFromState}
           renderItem={item}
@@ -276,12 +287,7 @@ export default function Searchbar({ values, updateSearch, style }) {
       </View>
 
 
-      {
-        error &&
-        <Text style={styles.txtError}>
-          {error}
-        </Text>
-      }
+
     </View>
 
   )
@@ -300,7 +306,7 @@ const styles = StyleSheet.create({
     width: "95%",
     height: 90,
     borderRadius: 20,
-    backgroundColor: "#FDFD96",
+    backgroundColor: "#ddbc9b",
     paddingHorizontal: 16,
     marginVertical: 10,
     left: "2%",
