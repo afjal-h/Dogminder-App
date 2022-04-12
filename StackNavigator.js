@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -63,7 +64,28 @@ const Tab = createBottomTabNavigator();
 
 function TabNav() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Book') {
+            iconName = focused
+              ? 'book-outline'
+              : 'book-outline';
+          } else if (route.name === 'Search') {
+            iconName = focused ? 'search-outline' : 'search-outline';
+          }
+          else if (route.name === 'Profile') {
+            iconName = focused ? 'person-outline' : 'person-outline';
+          }
+
+          // You can return any component that you like here!
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: 'tomato',
+        tabBarInactiveTintColor: 'gray',
+      })}>
       <Tab.Screen name="Book" component={BookStackScreen} />
       <Tab.Screen name="Search" component={SearchStackScreen} />
       <Tab.Screen name="Profile" component={ProfileStackScreen} />
