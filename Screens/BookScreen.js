@@ -10,7 +10,8 @@ const [time, setTime] = useState(0);
 
 const BookingStatusEnum = {
     FINISHED: "FINISHED",
-    ONGOING: "ONGOING"
+    ONGOING: "ONGOING",
+    CANCELLED: "CANCELLED"
 }
 
 // ended bookings must contain rating and showrating properties
@@ -57,6 +58,7 @@ function sample_bookings() {
         time: 1249629365,
         status: BookingStatusEnum.FINISHED,
         showRating: false,
+        rating: 3
     };
     bled.push(booking3);
 
@@ -96,6 +98,8 @@ function sample_bookings() {
 }
     
     return bled;
+
+   
 }
 
 // function UpdateArray(){
@@ -150,6 +154,7 @@ function BookScreen(props) {
         setBookings(bookingsClone);
     }
 
+    
 
     function handleClick(e: number, bookingId: number) {
         updateBooking(bookingId, 'rating', e);
@@ -159,7 +164,19 @@ function BookScreen(props) {
         updateBooking(bookingId, 'showRating', true);
     }
 
+<<<<<<< HEAD
     const [shouldShow, setShouldShow] = useState(true);
+=======
+
+    function handleCompletePress(bookingId: number) {
+        updateBooking(bookingId, 'status', BookingStatusEnum.FINISHED);
+    }
+
+    function handleCancelPress(bookingId: number) {
+        updateBooking(bookingId, 'status', BookingStatusEnum.CANCELLED);
+    }
+
+>>>>>>> 1c681ea1e8be510466981bb9806338f660801b49
 
     return (
         <SafeAreaView style={styles.container}>
@@ -185,13 +202,17 @@ function BookScreen(props) {
                                             <Button
                                                 title="Complete"
                                                 color="#d4a77d"
+<<<<<<< HEAD
                                                 onPress={() => Alert.alert('Completed') }
+=======
+                                                onPress={() => handleCompletePress(booking.id)}
+>>>>>>> 1c681ea1e8be510466981bb9806338f660801b49
                                             />
                                             <View style={styles.space}/>
                                             <Button
                                                 title="Cancel"
                                                 color="#d4a77d"
-                                                onPress={() => Alert.alert('Button pressed')}
+                                                onPress={() => handleCancelPress(booking.id)}
                                             />
 
                                         </View>
@@ -243,6 +264,27 @@ function BookScreen(props) {
                                                     )
                                                 }
                                             </View>
+                                        </View>
+                                    )
+                                }
+                            }
+                        )
+                    }
+                </View>
+                <View style={styles.bookinglocations}>
+                    <Text style={styles.headerstyle}>Cancelled Bookings</Text>
+                    {
+                        bookings.map(
+                            (booking) => {
+                                if (booking.status === BookingStatusEnum.CANCELLED) {
+                                    return (
+                                        <View style={styles.bookings} key={booking.id}>
+                                            <Text style={styles.textstyle}>Owner Name: {booking.ownerName}</Text>
+                                            <Text style={styles.textstyle}>Dog Name: {booking.dogName}</Text>
+                                            <Text
+                                                style={styles.textstyle}>Time: {moment(new Date(booking.time * 1000)).format('MM/DD/YYYY hh:MM')}</Text>
+                                            <Text style={styles.textstyle}>Status: {booking.status}</Text>
+                        
                                         </View>
                                     )
                                 }
