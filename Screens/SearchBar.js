@@ -25,31 +25,31 @@ export default function Searchbar({ values, updateSearch, style }) {
   const data = [{
     "Name": "Cornie Tumayan",
     "Location": "London",
-    "Bio": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
-    "Price": "£3.59",
+    "Bio": "Hello! I'm Cornie, twenty seven years old. Growing up in the countryside in a vastly rural environment, dogs were just a natural part of the scene but also part of the family.\n\nI'm currently working but I still have a lot of time available and my favourite pass time is to play with puppies and go on walks so this works perfect for me.",
+    "Price": "£10.50",
     "Pic": "https://robohash.org/omnisanimisint.png?size=50x50&set=set1",
     "Walker": false,
     "Sitter": true
   }, {
     "Name": "Moritz Mallett",
     "Location": "Luton",
-    "Bio": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+    "Bio": "Hi, I am Moritz and I have previous experience of dog sitting. I have sat for a range of different breeds from cheeky labrador puppies to energetic spanielsto little lab dogs.\n\nHere to help you and spend time with your furry friend. I always wanted a dog of my own but due to living in a rented flat it has not been allowed. One day though. ",
     "Price": "£9.25",
     "Pic": "https://robohash.org/iustosolutaperspiciatis.png?size=50x50&set=set1",
     "Walker": false,
-    "Sitter": false
+    "Sitter": true
   }, {
-    "Name": "Nananne Medlar",
+    "Name": "Laura Medlar",
     "Location": "Manchester",
-    "Bio": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
-    "Price": "£5.68",
+    "Bio": "My name is Laura. I am 39 years old and love all animals. I've been a pet owner and lived with animals for around 20 years.\n\nI am highly active so happy to take your pets for long walks and runs if they like! I am available morning until evening and am confident with looking after small to large dogs.",
+    "Price": "£7.80",
     "Pic": "https://robohash.org/facerenecessitatibuscorrupti.png?size=50x50&set=set1",
     "Walker": true,
     "Sitter": false
   }, {
     "Name": "Marilyn Swetman",
     "Location": "St.albans",
-    "Bio": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+    "Bio": "I am an excellent care provider for pets of all size and breeds. I have owned dogs my whole life and also dog sit on multiple occasions for family and friends.\n\nI have lots of free time to take care of your precious pals. I am available from Monday to Friday.",
     "Price": "£9.80",
     "Pic": "https://robohash.org/laudantiumaliquamcum.png?size=50x50&set=set1",
     "Walker": false,
@@ -57,31 +57,31 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Cristi Druitt",
     "Location": "Bedford",
-    "Bio": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
-    "Price": "£5.33",
+    "Bio": "I grew up in a house full of animals, three dogs and three cats, goats and chicken. I have plenty of experience and love! I am looking for this job ont because of money but more becasue I miss my pets that stayed in my parents' home.\n\nI am student and I have a part-time job, so I am looking to care for dogs to take out for a walk or to come and feed them. I am flexible so everything is up to your request.",
+    "Price": "£8.30",
     "Pic": "https://robohash.org/hicsequiomnis.png?size=50x50&set=set1",
     "Walker": true,
     "Sitter": true
   }, {
     "Name": "Eddie Mounsie",
     "Location": "Hertfordshire",
-    "Bio": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
-    "Price": "£4.45",
+    "Bio": "I have great relationship with all animals especially dogs and cats. I've worked for the RSPCA as an animal foster carer- rearing and rehoming- and for Bleakholt Animal Sanctuary as a trained and registered dog walker.\n\nGiving animals the attention they need is a hugely rewardign thing to do so I am happy to help you walk your dog.",
+    "Price": "£10.90",
     "Pic": "https://robohash.org/maiorescumquealiquid.png?size=50x50&set=set1",
-    "Walker": false,
+    "Walker": true,
     "Sitter": false
   }, {
     "Name": "Marcella Dineen",
     "Location": "Cambridge",
-    "Bio": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
-    "Price": "£1.73",
+    "Bio": "Hi there! I am Marcella. I am a vet and big dog passionate lover. I grew up around dogs since I was 10 years old. I used to feed them, take them to the vet, bath and play with the.\n\nIf you choose me to take care of your dogs, they are going to be treated with so much love, attention and care. Just let me know if your pet needs any special requirement.",
+    "Price": "£8.10",
     "Pic": "https://robohash.org/utdistinctioqui.png?size=50x50&set=set1",
     "Walker": false,
-    "Sitter": false
+    "Sitter": true
   }, {
     "Name": "Meridel Argent",
     "Location": "Nottingham",
-    "Bio": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+    "Bio": "I like to board one animal at a time to be able to provide a luxury service that your pet will feel and love!\n\nI work from home so I have plenty of time to be with your pet! Fuss, playing time and a lot of socialising time outdoors to enjoy.",
     "Price": "£7.83",
     "Pic": "https://robohash.org/voluptatemquisconsequatur.png?size=50x50&set=set1",
     "Walker": false,
@@ -89,55 +89,55 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Lonnard Loweth",
     "Location": "Bath",
-    "Bio": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
-    "Price": "£2.34",
+    "Bio": "I have lived around dogs my entire life so I have lots of experience looking after them. The majority of my experience with dogs has been through our family dogs or looking after family friends' dogs.\n\nI have just graduated from university so I currently have no commitments meaning that I will be able to give my full attention to the dogs without any distractions. ",
+    "Price": "£9.00",
     "Pic": "https://robohash.org/cupiditaterepellatest.png?size=50x50&set=set1",
     "Walker": false,
     "Sitter": true
   }, {
     "Name": "Kathie Devenish",
     "Location": "London",
-    "Bio": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.",
-    "Price": "£0.40",
+    "Bio": "I've had my beloved springer Tilly for 12 years, and since moving to London without her I have greatly missed the presence of a dog in my life.\n\nFully DBS checked and excellent reference available.\n\nOver three year of paid dog care experience working with a range of breeds including cockapoos, dachshunds, labradors and spaniels.\n\nI am available every weekends.",
+    "Price": "£10.20",
     "Pic": "https://robohash.org/eosadipisciaut.png?size=50x50&set=set1",
     "Walker": true,
     "Sitter": false
   }, {
     "Name": "Sophie Dutteridge",
     "Location": "Norwich",
-    "Bio": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
-    "Price": "£0.11",
+    "Bio": "Hey there! I am Sophie and I am a writer who works from home so I have the opportunity tot ake care of dogs whilst at home. I will ensure your dog receives my full attention whilst boarding/walking with me and I will cater to any special instructions.\n\nI have grown up with dogs and even dog sitted a guide dog in training so I am no stranger when it comes to them.",
+    "Price": "£7.90",
     "Pic": "https://robohash.org/beataequoslaboriosam.png?size=50x50&set=set1",
     "Walker": true,
     "Sitter": true
   }, {
     "Name": "Arnaldo Gores",
     "Location": "Bradford",
-    "Bio": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
-    "Price": "£0.62",
+    "Bio": "I love dogs so much and would love to take care of them, walk them, and play with them. It's my favourite thing in the world.\n\nI am a masters student and only go in once a week, so I have got plenty of time to walk your dog all week.",
+    "Price": "8.25",
     "Pic": "https://robohash.org/sedipsumet.png?size=50x50&set=set1",
     "Walker": true,
     "Sitter": false
   }, {
     "Name": "Cash Ruddiforth",
     "Location": "Leicester",
-    "Bio": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
-    "Price": "£5.64",
+    "Bio": "Since I was about 7 years old, I had to walk all of my dogs three times a day, every day. Throughout the years I have had many different dogs going through my home, as our family and friends knew they could always rely on us with taking good care of their pets.\n\nI am currently available to work all the week days.",
+    "Price": "£8.15",
     "Pic": "https://robohash.org/sintvitaemolestias.png?size=50x50&set=set1",
     "Walker": true,
     "Sitter": false
   }, {
     "Name": "Madelon Rycraft",
     "Location": "Oxford",
-    "Bio": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
-    "Price": "£3.30",
+    "Bio": "I've lived with and cared for dogs all my life, ranging from big Labradors to tiny Frenchies, and even unruly Rhodesian Ridgebacks. My friend calls me the dog whisperer because I get on so natually with dogs.\n\nI am available most times and really easy goign and friendly. I'm known to be reliable, and am looking to work with people in the long term so I could get to know them and their dogs better.",
+    "Price": "£9.15",
     "Pic": "https://robohash.org/utestnemo.png?size=50x50&set=set1",
     "Walker": true,
     "Sitter": true
   }, {
     "Name": "Ikey Oaten",
     "Location": "Karangpete",
-    "Bio": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.",
+    "Bio": "I am an animals loving person with more than 20 years of experience lookingvafter  and taking care of dogs with flexible time, willing in the sensible manner to look after your best hairy friend.",
     "Price": "£9.09",
     "Pic": "https://robohash.org/necessitatibusnonenim.png?size=50x50&set=set1",
     "Walker": true,
@@ -145,23 +145,23 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Markus Chalcroft",
     "Location": "Rājo Khanāni",
-    "Bio": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+    "Bio": "Everyobe has that one thing they are passioante about, for me it's animals and nature. I am more than willing to walk your dogs to meet their needs. I am quite an active person too so it's the perfect job for me.",
     "Price": "£3.12",
     "Pic": "https://robohash.org/eiusetquas.png?size=50x50&set=set1",
-    "Walker": false,
+    "Walker": true,
     "Sitter": false
   }, {
     "Name": "Aurlie Janton",
     "Location": "Shushenskoye",
-    "Bio": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
-    "Price": "£5.27",
+    "Bio": "My job is very flexible which allows me to be available for day time walks with your pooch! I am a massive lover of dogs and happy to provide whatever atterntion your dog requires\n\nPreviously I owned a medium sized strong dog and I have and I have volunteered at a Kennels for around 4 years dealing with alldifferent breeds of dog so I am experienced and happy to deal with your dogs.",
+    "Price": "£10.10",
     "Pic": "https://robohash.org/quioditquia.png?size=50x50&set=set1",
     "Walker": true,
     "Sitter": false
   }, {
     "Name": "Krishna Mingaye",
-    "Location": "Senangkhanikhom",
-    "Bio": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "Location": "Birmingham",
+    "Bio": "Each pet has their own personality and style. I adapt to exactly what your dog needs and wants. If they want cuddles, they get cuddles. If they want space, they get space. It's always about the adorable pets needs.\n\nI am enthusiastic and highly energetic so it will take a lot for a dog to tire me out. I am free to sit your dog any week days.",
     "Price": "£9.64",
     "Pic": "https://robohash.org/aliquidquisquamquaerat.png?size=50x50&set=set1",
     "Walker": false,
@@ -169,15 +169,15 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Loralie Wildor",
     "Location": "Duszniki-Zdrój",
-    "Bio": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
-    "Price": "£1.41",
+    "Bio": "I am an excellent care provider for dogs of all size and breed, I have owned dogs my whole life and also dod sit on many ocaasions for relatives. I am naturally calm and body quickly with new dogs. ",
+    "Price": "£9.95",
     "Pic": "https://robohash.org/accusantiumporrosaepe.png?size=50x50&set=set1",
     "Walker": false,
     "Sitter": true
   }, {
     "Name": "Emmalynne Autry",
     "Location": "Yutou",
-    "Bio": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "Bio": "I have had my own dog for the last 15 years, a lovely Jack Russel. I am very active and can ensure your pet will be well excercised.\n\nI am currently working from home with a flexible timetable meaning I can walk the dog in the morning, lunch or afternoon depending on the requirements and schedule of the dog.",
     "Price": "£9.17",
     "Pic": "https://robohash.org/consequaturnesciuntmagni.png?size=50x50&set=set1",
     "Walker": true,
