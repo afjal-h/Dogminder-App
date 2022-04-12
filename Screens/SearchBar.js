@@ -191,18 +191,13 @@ export default function Searchbar({ values, updateSearch, style }) {
     uri: item.Pic,
     cache: 'only-if-cached'
   }}
-  style={{ width: 40, height: 40,top: 25 }}
+  style={{ width: 40, height: 40,top: 25, borderRadius:75, backgroundColor:'#696880' }}
 />
                 <Text style={styles.baseText}>
-                
-
-                  <Text>       </Text>
-                  <Text>{item.Name},</Text>
-                  <Text> </Text>
-                  <Text>{item.Location},</Text>
-                  <Text> </Text>
-                  <Text>{item.Price} per hour</Text>
-                  </Text>
+                  <Text>{item.Name}, {item.Price} per hour{'\n'}</Text>
+                  <Text>{item.Location}</Text>
+                 </Text>
+                  
               </TouchableOpacity>
               
               
@@ -302,33 +297,32 @@ const styles = StyleSheet.create({
 
     },
     box:{
-        width: "98%",
+        width: "95%",
         height: 90,
         borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-        backgroundColor: "#FFEFC0",
+        backgroundColor: "#FDFD96",
         paddingHorizontal: 16,
         marginVertical: 10,
-        left:"0%",
+        left:"2%",
        
-        textAlignVertical: "bottom",
+        textAlignVertical: "top",
         
         
        
     },
 
-    pfp:{
-      borderRadius:75,
-
-    },
+    
+    
 
     
 
     baseText:{
       fontWeight: 'bold',
       textAlign: 'right',
-      fontFamily: 'monospace',
-      fontSize:15,
+      fontFamily: 'sans-serif',
+      fontSize:18,
+      top:-20,
 
 
     },
