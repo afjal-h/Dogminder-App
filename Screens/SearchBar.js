@@ -246,12 +246,12 @@ export default function Searchbar({ values, updateSearch, style }) {
                 onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
               >
                <Picker.Item label="-Choose-" value="choose" />   
+               <Picker.Item label="Service: dog sitting" value="service" />
                <Picker.Item label="Service: dog walking" value="service" />
-               <Picker.Item label="Service: dog walking" value="service" />
-               <Picker.Item label="Price:low to high" value="price" />
-               <Picker.Item label="Price:high to low" value="price" />
-               <Picker.Item label="Rating:low to high" value="rating" />
-               <Picker.Item label="Rating:high to low" value="rating" />
+               <Picker.Item label="Price: low to high" value="price" />
+               <Picker.Item label="Price: high to low" value="price" />
+               <Picker.Item label="Rating: low to high" value="rating" />
+               <Picker.Item label="Rating: high to low" value="rating" />
              </Picker>
              
             </View>
