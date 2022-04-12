@@ -137,7 +137,7 @@ export default function Searchbar({ values, updateSearch, style }) {
     "Sitter": true
   }, {
     "Name": "Ikey Oaten",
-    "Location": "Karangpete",
+    "Location": "Karangpetecc",
     "Bio": "I am an animals loving person with more than 20 years of experience looking after and taking care of dogs with flexible time, willing in the sensible manner to look after your best hairy friend.",
     "Price": 9.09,
     "Pic": "https://robohash.org/necessitatibusnonenim.png?size=50x50&set=set1",
@@ -219,21 +219,29 @@ export default function Searchbar({ values, updateSearch, style }) {
     let searchData = data.filter((item) => {
       return item.Location.toLowerCase().includes(input.toLowerCase())
     });
-    setData(searchData);
+    if (selectedService=="walk"){
+      setData(searchWalk(searchData));
+    }
+    else if (selectedService=="sit"){
+      setData(searchSit(searchData));
+    }
+    else{
+      setData(searchData);
+    }
 
   }
-  const searchWalk = () => {
+  const searchWalk = (data) => {
     let searchData = data.filter((item) => {
       return JSON.stringify(item.Walker).includes("true")
     });
-    setData(searchData);
+    return searchData;
 
   }
-  const searchSit = () => {
+  const searchSit = (data) => {
     let searchData = data.filter((item) => {
       return JSON.stringify(item.Sitter).includes("true")
     });
-    setData(searchData);
+    return searchData;
 
   }
 
@@ -260,7 +268,7 @@ export default function Searchbar({ values, updateSearch, style }) {
           style={styles.textInput}
           onChangeText=
           {(input) => {
-            searchName(input)
+            setQuery(input);
           }}
         />
         {
@@ -282,14 +290,8 @@ export default function Searchbar({ values, updateSearch, style }) {
           selectedService={selectedService}
           style={{ height: 50, width: 200 }}
           onValueChange={(itemValue, itemIndex) => {
-            if(itemValue=="sit"){
-              searchSit();
-            }
-            else if (itemValue=="walk"){
-              searchWalk();
-            }
-
-          }}
+            setSelectedService(itemValue)}
+          }
         >
           < Picker.Item label="-Choose Service-" value="choose" />
           <Picker.Item label="Service: dog sitting" value="sit" />
@@ -308,12 +310,17 @@ export default function Searchbar({ values, updateSearch, style }) {
           <Picker.Item label="Rating: low to high" value="low rating" />
           <Picker.Item label="Rating: high to low" value="high rating" />
         </Picker>
+        <TouchableOpacity style={styles.LoginButton} onPress={()=>
+        
+          searchName(query)}>
+                <Text style={styles.ButtonText}>Search</Text>
+            </TouchableOpacity>
 
       </View>
       <View
         style={{ height: "70%" }}>
         <FlatList
-          data={selectedService ? dataFromState.sort((a, b) => {
+          data={selectedValue ? dataFromState.sort((a, b) => {
             if (selectedValue === "low price") {
               if (a.Price > b.Price) {
                 return 1
@@ -351,6 +358,21 @@ const styles = StyleSheet.create({
 
 
   },
+  LoginButton: {
+
+    width: 100,
+    borderRadius: 25,
+    backgroundColor: "#91877D",
+    paddingVertical: 10,
+
+    marginVertical: 10,
+
+},
+ButtonText: {
+  textAlign: "center",
+  color: "#ffff"
+
+},
   box: {
     width: "95%",
     height: 90,
