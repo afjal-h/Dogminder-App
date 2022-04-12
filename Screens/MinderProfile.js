@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
     },
     box: {
         width: "95%",
-        height: "70%",
         borderRadius: 20,
         backgroundColor: "#ddbc9b",
         paddingHorizontal: 16,
