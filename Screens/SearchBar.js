@@ -222,6 +222,20 @@ export default function Searchbar({ values, updateSearch, style }) {
     setData(searchData);
 
   }
+  const searchWalk = () => {
+    let searchData = data.filter((item) => {
+      return JSON.stringify(item.Walker).includes("true")
+    });
+    setData(searchData);
+
+  }
+  const searchSit = () => {
+    let searchData = data.filter((item) => {
+      return JSON.stringify(item.Sitter).includes("true")
+    });
+    setData(searchData);
+
+  }
 
 
 
@@ -267,7 +281,15 @@ export default function Searchbar({ values, updateSearch, style }) {
         <Picker
           selectedService={selectedService}
           style={{ height: 50, width: 200 }}
-          onValueChange={(itemValue, itemIndex) => setSelectedService(itemValue)}
+          onValueChange={(itemValue, itemIndex) => {
+            if(itemValue=="sit"){
+              searchSit();
+            }
+            else if (itemValue=="walk"){
+              searchWalk();
+            }
+
+          }}
         >
           < Picker.Item label="-Choose Service-" value="choose" />
           <Picker.Item label="Service: dog sitting" value="sit" />
@@ -276,7 +298,9 @@ export default function Searchbar({ values, updateSearch, style }) {
         <Picker
           selectedValue={selectedValue}
           style={{ height: 50, width: 200 }}
-          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+          onValueChange={(itemValue, itemIndex) => {
+            setSelectedValue(itemValue)}
+          }
         >
           < Picker.Item label="-Sort By-" value="choose" />
           <Picker.Item label="Price: low to high" value="low price" />
@@ -300,22 +324,6 @@ export default function Searchbar({ values, updateSearch, style }) {
             }
             if (selectedValue === "high price") {
               if (a.Price > b.Price) {
-                return -1
-              }
-              else {
-                return 1
-              }
-            }
-            if (selectedService === "walk") {
-              if (a.Walker === true) {
-                return -1
-              }
-              else {
-                return 1
-              }
-            }
-            if (selectedService === "sit") {
-              if (a.Sitter === true) {
                 return -1
               }
               else {
