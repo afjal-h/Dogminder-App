@@ -34,7 +34,7 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Moritz Mallett",
     "Location": "Luton",
-    "Bio": "Hi, I am Moritz and I have previous experience of dog sitting. I have sat for a range of different breeds from cheeky labrador puppies to energetic spanielsto little lab dogs.\n\nHere to help you and spend time with your furry friend. I always wanted a dog of my own but due to living in a rented flat it has not been allowed. One day though. ",
+    "Bio": "Hi, I am Moritz and I have previous experience of dog sitting. I have sat for a range of different breeds from cheeky labrador puppies to energetic spaniels.\n\nHere to help you and spend time with your furry friend. I always wanted a dog of my own but due to living in a rented flat it has not been allowed. One day though. ",
     "Price": "£9.25",
     "Pic": "https://robohash.org/iustosolutaperspiciatis.png?size=50x50&set=set1",
     "Walker": false,
@@ -58,7 +58,7 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Cristi Druitt",
     "Location": "Bedford",
-    "Bio": "I grew up in a house full of animals, three dogs and three cats, goats and chicken. I have plenty of experience and love! I am looking for this job ont because of money but more becasue I miss my pets that stayed in my parents' home.\n\nI am student and I have a part-time job, so I am looking to care for dogs to take out for a walk or to come and feed them. I am flexible so everything is up to your request.",
+    "Bio": "I grew up in a house full of animals, three dogs and three cats, goats and chicken. I have plenty of experience and love! I am looking for this job not because of money but more because I miss my pets that stayed in my parents' home.\n\nI am student and I have a part-time job, so I am looking to care for dogs to take out for a walk or to come and feed them. I am flexible so everything is up to your request.",
     "Price": "£8.30",
     "Pic": "https://robohash.org/hicsequiomnis.png?size=50x50&set=set1",
     "Walker": true,
@@ -66,7 +66,7 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Eddie Mounsie",
     "Location": "Hertfordshire",
-    "Bio": "I have great relationship with all animals especially dogs and cats. I've worked for the RSPCA as an animal foster carer- rearing and rehoming- and for Bleakholt Animal Sanctuary as a trained and registered dog walker.\n\nGiving animals the attention they need is a hugely rewardign thing to do so I am happy to help you walk your dog.",
+    "Bio": "I have great relationship with all animals especially dogs and cats. I've worked for the RSPCA as an animal foster carer- rearing and rehoming- and for Bleakholt Animal Sanctuary as a trained and registered dog walker.\n\nGiving animals the attention they need is a hugely rewarding thing to do so I am happy to help you walk your dog.",
     "Price": "£10.90",
     "Pic": "https://robohash.org/maiorescumquealiquid.png?size=50x50&set=set1",
     "Walker": true,
@@ -106,7 +106,7 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Sophie Dutteridge",
     "Location": "Norwich",
-    "Bio": "Hey there! I am Sophie and I am a writer who works from home so I have the opportunity tot ake care of dogs whilst at home. I will ensure your dog receives my full attention whilst boarding/walking with me and I will cater to any special instructions.\n\nI have grown up with dogs and even dog sitted a guide dog in training so I am no stranger when it comes to them.",
+    "Bio": "Hey there! I am Sophie and I am a writer who works from home so I have the opportunity to take care of dogs whilst at home. I will ensure your dog receives my full attention whilst boarding/walking with me and I will cater to any special instructions.\n\nI have grown up with dogs and even dog sitted a guide dog in training so I am no stranger when it comes to them.",
     "Price": "£7.90",
     "Pic": "https://robohash.org/beataequoslaboriosam.png?size=50x50&set=set1",
     "Walker": true,
@@ -115,7 +115,7 @@ export default function Searchbar({ values, updateSearch, style }) {
     "Name": "Arnaldo Gores",
     "Location": "Bradford",
     "Bio": "I love dogs so much and would love to take care of them, walk them, and play with them. It's my favourite thing in the world.\n\nI am a masters student and only go in once a week, so I have got plenty of time to walk your dog all week.",
-    "Price": "8.25",
+    "Price": "£8.25",
     "Pic": "https://robohash.org/sedipsumet.png?size=50x50&set=set1",
     "Walker": true,
     "Sitter": false
@@ -130,7 +130,7 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Madelon Rycraft",
     "Location": "Oxford",
-    "Bio": "I've lived with and cared for dogs all my life, ranging from big Labradors to tiny Frenchies, and even unruly Rhodesian Ridgebacks. My friend calls me the dog whisperer because I get on so natually with dogs.\n\nI am available most times and really easy goign and friendly. I'm known to be reliable, and am looking to work with people in the long term so I could get to know them and their dogs better.",
+    "Bio": "I've lived with and cared for dogs all my life, ranging from big Labradors to tiny Frenchies, and even unruly Rhodesian Ridgebacks. My friend calls me the dog whisperer because I get on so natually with dogs.\n\nI am available most times and really easy going and friendly. I'm known to be reliable, and am looking to work with people in the long term so I could get to know them and their dogs better.",
     "Price": "£9.15",
     "Pic": "https://robohash.org/utestnemo.png?size=50x50&set=set1",
     "Walker": true,
@@ -138,7 +138,7 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Ikey Oaten",
     "Location": "Karangpete",
-    "Bio": "I am an animals loving person with more than 20 years of experience lookingvafter  and taking care of dogs with flexible time, willing in the sensible manner to look after your best hairy friend.",
+    "Bio": "I am an animals loving person with more than 20 years of experience looking after and taking care of dogs with flexible time, willing in the sensible manner to look after your best hairy friend.",
     "Price": "£9.09",
     "Pic": "https://robohash.org/necessitatibusnonenim.png?size=50x50&set=set1",
     "Walker": true,
@@ -146,15 +146,15 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Markus Chalcroft",
     "Location": "Rājo Khanāni",
-    "Bio": "Everyobe has that one thing they are passioante about, for me it's animals and nature. I am more than willing to walk your dogs to meet their needs. I am quite an active person too so it's the perfect job for me.",
-    "Price": "£3.12",
+    "Bio": "Everybody has that one thing they are passionate about, for me it's animals and nature. I am more than willing to walk your dogs to meet their needs. I am quite an active person too so it's the perfect job for me.",
+    "Price": "£7.99",
     "Pic": "https://robohash.org/eiusetquas.png?size=50x50&set=set1",
     "Walker": true,
     "Sitter": false
   }, {
     "Name": "Aurlie Janton",
     "Location": "Shushenskoye",
-    "Bio": "My job is very flexible which allows me to be available for day time walks with your pooch! I am a massive lover of dogs and happy to provide whatever atterntion your dog requires\n\nPreviously I owned a medium sized strong dog and I have and I have volunteered at a Kennels for around 4 years dealing with alldifferent breeds of dog so I am experienced and happy to deal with your dogs.",
+    "Bio": "My job is very flexible which allows me to be available for day time walks with your pooch! I am a massive lover of dogs and happy to provide whatever atterntion your dog requires\n\nPreviously I owned a medium sized strong dog and I have volunteered at a Kennels for around 4 years dealing with all different breeds of dog so I am experienced and happy to deal with your dogs.",
     "Price": "£10.10",
     "Pic": "https://robohash.org/quioditquia.png?size=50x50&set=set1",
     "Walker": true,
@@ -170,7 +170,7 @@ export default function Searchbar({ values, updateSearch, style }) {
   }, {
     "Name": "Loralie Wildor",
     "Location": "Duszniki-Zdrój",
-    "Bio": "I am an excellent care provider for dogs of all size and breed, I have owned dogs my whole life and also dod sit on many ocaasions for relatives. I am naturally calm and body quickly with new dogs. ",
+    "Bio": "I am an excellent care provider for dogs of all size and breed, I have owned dogs my whole life and also dog sit on many occasions for relatives. I am naturally calm and body quickly with new dogs. ",
     "Price": "£9.95",
     "Pic": "https://robohash.org/accusantiumporrosaepe.png?size=50x50&set=set1",
     "Walker": false,
