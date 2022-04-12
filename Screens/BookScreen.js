@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import {Alert, Button, Image, SafeAreaView, ScrollView, StyleSheet, Text, View} from "react-native";
-import {TouchableOpacity} from "react-native";
+import {TouchableOpacity} from "react-native-gesture-handler";
 import moment from "moment";
-//let bookingdata=[];
-
 
 const BookingStatusEnum = {
     FINISHED: "FINISHED",
@@ -24,9 +22,7 @@ export interface Booking {
 
 function sample_bookings() {
     let bled = [];
-    const [ownername, setOwnername] = useState("");
-    const [dogname, setDogname] = useState("");
-    const [time, setTime] = useState(0);
+
     let booking: Booking = {
         id: 1,
         ownerName: "Name Name",
@@ -66,7 +62,7 @@ function sample_bookings() {
         ownerName: "Name Name",
         dogName: "Woof Woof",
         time: 1349629365,
-        status: BookingStatusEnum.FINISHED,
+        status: BookingStatusEnum.ONGOING,
         showRating: false
     };
     bled.push(booking4);
@@ -77,38 +73,15 @@ function sample_bookings() {
         ownerName: "Name Name",
         dogName: "Woof Woof",
         time: 1449629365,
-        status: BookingStatusEnum.FINISHED,
+        status: BookingStatusEnum.ONGOING,
         showRating: false
     };
     bled.push(booking5);
-
-  if({ownername}!="" && {dogname}!="" && {time}!=0){
-
-    let booking6: Booking ={
-        id: 6,
-        ownerName: ownername,
-        dogName: dogname,
-        time: time,
-        status: BookingStatusEnum.ONGOING,
-        showRating: false,
-        rating: 3
-    }
-    bled.push(booking6);
-}
-    
     return bled;
 
    
 }
 
-// function UpdateArray(){
-//     bookingdata={
-//         id:"6",
-//         ownerName:"Name",
-//         dogName:"Another Name", 
-//         time:"1049629365"
-//     };
-// }
 
 function BookScreen(props) {
     const [bookings, setBookings] = useState(sample_bookings);
@@ -163,16 +136,19 @@ function BookScreen(props) {
         updateBooking(bookingId, 'showRating', true);
     }
 
-    const [shouldShow, setShouldShow] = useState(true);
+
+    function handleCompletePress(bookingId: number) {
+        updateBooking(bookingId, 'status', BookingStatusEnum.FINISHED);
+    }
+
+    function handleCancelPress(bookingId: number) {
+        updateBooking(bookingId, 'status', BookingStatusEnum.CANCELLED);
+    }
+
 
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView>
-                {/* <Button
-                    title="Book"
-                    color="#d4a77d"
-                    onPress={() => UpdateArray()}
-                /> */}
                 <View style={styles.bookinglocations}>
                     <Text style={styles.headerstyle}>Current Bookings</Text>
                     {
@@ -189,7 +165,7 @@ function BookScreen(props) {
                                             <Button
                                                 title="Complete"
                                                 color="#d4a77d"
-                                                onPress={() => Alert.alert('Completed') }
+                                                onPress={() => handleCompletePress(booking.id)}
                                             />
                                             <View style={styles.space}/>
                                             <Button
@@ -199,7 +175,6 @@ function BookScreen(props) {
                                             />
 
                                         </View>
-
                                     )
                                 }
                             }
