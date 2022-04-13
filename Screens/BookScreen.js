@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import {Alert, Button, Image, SafeAreaView, ScrollView, StyleSheet, Text, View} from "react-native";
 import {TouchableOpacity} from "react-native";
 import moment from "moment";
+import { TextInput } from "react-native-gesture-handler";
 
 const BookingStatusEnum = {
     FINISHED: "FINISHED",
@@ -19,10 +20,9 @@ export interface Booking {
     rating?: any;
     showRating?: any;
 }
+let bled = [];
 
 function sample_bookings() {
-    let bled = [];
-
     let booking: Booking = {
         id: 1,
         ownerName: "Name Name",
@@ -77,15 +77,18 @@ function sample_bookings() {
         showRating: false
     };
     bled.push(booking5);
-    return bled;
-
-   
+    return bled; 
 }
 
 
 function BookScreen(props) {
     const [bookings, setBookings] = useState(sample_bookings);
     const starCount = 5
+    const [ownername,setOwnerName]=useState("");
+    const [dogname,setDogname]=useState("");
+    const [time,setTime]=useState(0);
+    const [newbooking,setNewbooking]=useState(true);
+    
 
     function updateObj(path, value, object) {
         var valuePath = path.split(','),
@@ -145,12 +148,80 @@ function BookScreen(props) {
         updateBooking(bookingId, 'status', BookingStatusEnum.CANCELLED);
     }
 
+    useEffect(() =>{
+        setNewbooking(true);
+    });
+
+    function checkNewBooking(){
+        if({newbooking}){
+            return(
+                <View style={styles.bookings}>
+                    <Text style={styles.textstyle}>Owner Name: {ownername}</Text>
+                    <Text style={styles.textstyle}>Dog Name: {dogname}</Text>
+                    <Text
+                        style={styles.textstyle}>Time: {moment(new Date(time * 1000)).format('MM/DD/YYYY hh:MM')}</Text>
+                    <Text style={styles.textstyle}>Status: {BookingStatusEnum.ONGOING}</Text>
+                    <Button
+                        title="Complete"
+                        color="#d4a77d"
+                        onPress={() => handleCompletePress(booking.id)}
+                    />
+                    <View style={styles.space}/>
+                    <Button
+                        title="Cancel"
+                        color="#d4a77d"
+                        onPress={() => handleCancelPress(booking.id)}
+                    />
+                </View>
+            )
+        }
+        else{
+            return null;
+        }
+    }
+
+
 
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView>
                 <View style={styles.bookinglocations}>
                     <Text style={styles.headerstyle}>Current Bookings</Text>
+                    <TextInput 
+                        value={ownername}
+                        onChangeText={setOwnerName}
+                    />
+                    <TextInput 
+                        value={dogname}
+                        onChangeText={setDogname}
+                    />
+                    <TextInput 
+                        value={time}
+                        onChangeText={setTime}
+                    />
+                    <View style={styles.bookings}>
+                    <Button 
+                        title="Book"
+                        color="#d4a77d"
+                        onPress={() => checkNewBooking()}
+                    />
+                    <Text style={styles.textstyle}>Owner Name: {ownername}</Text>
+                    <Text style={styles.textstyle}>Dog Name: {dogname}</Text>
+                    <Text
+                        style={styles.textstyle}>Time: {moment(new Date(time * 1000)).format('MM/DD/YYYY hh:MM')}</Text>
+                    <Text style={styles.textstyle}>Status: {BookingStatusEnum.ONGOING}</Text>
+                    <Button
+                        title="Complete"
+                        color="#d4a77d"
+                        onPress={() => handleCompletePress(booking.id)}
+                    />
+                    <View style={styles.space}/>
+                    <Button
+                        title="Cancel"
+                        color="#d4a77d"
+                        onPress={() => handleCancelPress(booking.id)}
+                    />
+                    </View> 
                     {
                         bookings.map(
                             (booking) => {
@@ -254,7 +325,7 @@ function BookScreen(props) {
         </SafeAreaView>
 
     );
-}
+};
 
 export default BookScreen;
 
