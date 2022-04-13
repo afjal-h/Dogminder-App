@@ -22,6 +22,24 @@ function SignUpScreen(props) {
             Alert.alert("Passwords do not match!")
         }
 
+        else if (username.length === 0) { 
+            Alert.alert("Please enter a username")
+        }
+
+        else if (email.length === 0) { 
+            Alert.alert("Please enter a email")
+        }
+
+        else if (phone.length === 0) { 
+            Alert.alert("Please enter a phone number")
+        }
+
+        else if (location.length === 0) { 
+            Alert.alert("Please enter your location")
+        }
+
+        
+
         else {
             auth.createUserWithEmailAndPassword(email, password)
                 .then(result => {

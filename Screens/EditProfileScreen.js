@@ -23,6 +23,19 @@ function EditProfileScreen(props) {
 
 
     const handleSignUp = () => { //firebase authentication so that info is sent to database
+         if (phone.length === 0) { 
+            Alert.alert("Please enter a phone number")
+        }
+
+        else if (location.length === 0) { 
+            Alert.alert("Please enter your location")
+        }
+
+        else if (Bio.length === 0) { 
+            Alert.alert("Please enter your bio")
+        }
+
+        else {
         db.collection("users")
             .doc(auth.currentUser.uid)
             .update({
@@ -30,14 +43,20 @@ function EditProfileScreen(props) {
                 location: location,
                 bio: Bio
 
+            
+
                 
             })
+
+            navigation.replace('SignUpInfoPage')
+
+        }
              
             
 
 
             
-        navigation.replace('SignUpInfoPage')
+       
 
     }
 

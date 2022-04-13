@@ -15,6 +15,16 @@ function SignUpScreen(props) {
 
     const handleSignUp = () => { //firebase authentication so that info is sent to database
 
+        if (DogName.length === 0) { 
+            Alert.alert("Please enter your dog's name")
+        }
+
+        else if (Breed.length === 0) { 
+            Alert.alert("Please enter your dog's breed")
+        }
+
+        else {
+
         db.collection("Dog Info")
             .doc(auth.currentUser.uid)
             .set({
@@ -26,6 +36,8 @@ function SignUpScreen(props) {
 
 
     }
+
+}
 
 
     return (
