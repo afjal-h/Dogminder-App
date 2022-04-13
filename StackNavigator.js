@@ -14,6 +14,7 @@ import BookScreen from './Screens/BookScreen'
 import EditProfileScreen from './Screens/EditProfileScreen'
 import PasswordResetScreen from './Screens/PasswordResetScreen'
 import MinderProfile from './Screens/MinderProfile'
+import PaymentScreen from './Screens/PaymentScreen'
 const Stack = createNativeStackNavigator();
 function WelcomeStackScreen() {
   return (
@@ -46,6 +47,7 @@ function SearchStackScreen() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="SearchPage" component={SearchScreen} />
       <Stack.Screen name="MinderScreen" component={MinderProfile} />
+      <Stack.Screen name="PaymentPage" component={PaymentScreen}/>
     </Stack.Navigator>
   )
 

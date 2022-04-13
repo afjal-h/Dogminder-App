@@ -1,4 +1,4 @@
-import { useNavigation } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { View, Text, TextInput, Alert, TouchableOpacity, Button, Image, StyleSheet } from "react-native";
 import { auth } from '../firebase';
 import { useEffect, useState } from "react";
@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 
 function SignUpScreen(profile) {
+    const navigation = useNavigation();
 
 
 
@@ -30,7 +31,8 @@ function SignUpScreen(profile) {
                     style={{ textAlign: 'left', width: 350, top: 15 }}>{profile.route.params.Bio}</Text>
                 <Text
                     style={{ fontWeight: 'bold', fontSize: 20, top: 30, textAlign: "center" }}>£{profile.route.params.Price} Per Hour</Text>
-                <TouchableOpacity style={styles.LoginButton} >
+                <TouchableOpacity style={styles.LoginButton}
+                onPress={()=>navigation.navigate('PaymentPage')} >
                     <Text style={styles.ButtonText}>Book Now</Text>
                 </TouchableOpacity>
 
