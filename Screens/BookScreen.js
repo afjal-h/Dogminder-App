@@ -9,6 +9,7 @@ const BookingStatusEnum = {
     ONGOING: "ONGOING",
     CANCELLED: "CANCELLED"
 }
+var id=1;
 
 // ended bookings must contain rating and showrating properties
 export interface Booking {
@@ -21,6 +22,22 @@ export interface Booking {
     showRating?: any;
 }
 let bled = [];
+
+function addbooking(minderName,dogname){
+    let booking: Booking = {
+        id: id,
+        ownerName: minderName,
+        dogName: dogname,
+        time: 1049629365,
+        status: BookingStatusEnum.ONGOING,
+        showRating: false,
+        rating: 3
+    };
+    id+=1;
+    bled.push(booking);
+    return bled;
+
+}
 
 function sample_bookings() {
     let booking: Booking = {
@@ -82,7 +99,7 @@ function sample_bookings() {
 
 
 function BookScreen(props) {
-    const [bookings, setBookings] = useState(sample_bookings);
+    const [bookings, setBookings] = useState([]);
     const starCount = 5
     const [ownername,setOwnerName]=useState("");
     const [dogname,setDogname]=useState("");
@@ -148,38 +165,6 @@ function BookScreen(props) {
         updateBooking(bookingId, 'status', BookingStatusEnum.CANCELLED);
     }
 
-    useEffect(() =>{
-        setNewbooking(true);
-    });
-
-    function checkNewBooking(){
-        if({newbooking}){
-            return(
-                <View style={styles.bookings}>
-                    <Text style={styles.textstyle}>Owner Name: {ownername}</Text>
-                    <Text style={styles.textstyle}>Dog Name: {dogname}</Text>
-                    <Text
-                        style={styles.textstyle}>Time: {moment(new Date(time * 1000)).format('MM/DD/YYYY hh:MM')}</Text>
-                    <Text style={styles.textstyle}>Status: {BookingStatusEnum.ONGOING}</Text>
-                    <Button
-                        title="Complete"
-                        color="#d4a77d"
-                        onPress={() => handleCompletePress(booking.id)}
-                    />
-                    <View style={styles.space}/>
-                    <Button
-                        title="Cancel"
-                        color="#d4a77d"
-                        onPress={() => handleCancelPress(booking.id)}
-                    />
-                </View>
-            )
-        }
-        else{
-            return null;
-        }
-    }
-
 
 
     return (
@@ -203,24 +188,9 @@ function BookScreen(props) {
                     <Button 
                         title="Book"
                         color="#d4a77d"
-                        onPress={() => checkNewBooking()}
+                        onPress={() => setBookings(addbooking(ownername,dogname))}
                     />
-                    <Text style={styles.textstyle}>Owner Name: {ownername}</Text>
-                    <Text style={styles.textstyle}>Dog Name: {dogname}</Text>
-                    <Text
-                        style={styles.textstyle}>Time: {moment(new Date(time * 1000)).format('MM/DD/YYYY hh:MM')}</Text>
-                    <Text style={styles.textstyle}>Status: {BookingStatusEnum.ONGOING}</Text>
-                    <Button
-                        title="Complete"
-                        color="#d4a77d"
-                        onPress={() => handleCompletePress(booking.id)}
-                    />
-                    <View style={styles.space}/>
-                    <Button
-                        title="Cancel"
-                        color="#d4a77d"
-                        onPress={() => handleCancelPress(booking.id)}
-                    />
+                   
                     </View> 
                     {
                         bookings.map(
