@@ -34,6 +34,7 @@ function addbooking(minderName,dogname){
         rating: 3
     };
     id+=1;
+    console.log(id)
     bled.push(booking);
     return bled;
 
